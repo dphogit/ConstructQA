@@ -2,9 +2,26 @@
 
 Question Answering System for NZ Building Code Regulations - UoA Part IV Research Project
 
-## Getting Started
+## Frontend - React + TypeScript + Vite Web Application
 
-### Backend
+Navigate to the `webapp` directory:
+
+```bash
+cd webapp
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the web application:
+```bash
+npm run dev
+```
+
+## Backend - Flask REST API
 
 Navigate to the `backend` directory:
 
