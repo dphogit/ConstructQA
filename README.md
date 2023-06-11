@@ -2,7 +2,17 @@
 
 Question Answering System for NZ Building Code Regulations - UoA Part IV Research Project
 
-## Frontend - React + TypeScript + Vite Web Application
+## 🎨 Frontend 
+
+The frontend web application is built using:
+- React + TypeScript for app development
+- Vite for the build tool
+- Mantine for the UI component library
+
+It follows the practices of the [Bulletproof-React Guide](https://github.com/alan2207/bulletproof-react/tree/master) so
+please quickly familiarise with it regarding the project structure and best practices.
+
+### Installation and Setup
 
 Navigate to the `webapp` directory:
 
@@ -21,7 +31,13 @@ Run the web application:
 npm run dev
 ```
 
-## Backend - Flask REST API
+## 🔢 Backend
+
+The backend server is built using:
+- Flask for the web framework to develop the REST API
+- TODO: Add relevant ML packages
+
+### Installation and Setup
 
 Navigate to the `backend` directory:
 
