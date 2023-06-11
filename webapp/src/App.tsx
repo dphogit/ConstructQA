@@ -37,7 +37,7 @@ function App() {
         maxRows={5}
         autosize
       />
-      <Flex justify="space-between">
+      <Flex justify="space-between" align="center">
         <Box>
           <Text>Status: {getHealthCheckStatus()}</Text>
         </Box>
