@@ -8,6 +8,7 @@ The frontend web application is built using:
 - React + TypeScript for app development
 - Vite for the build tool
 - Mantine for the UI component library
+- Tanstack React Query for data fetching
 
 It follows the practices of the [Bulletproof-React Guide](https://github.com/alan2207/bulletproof-react/tree/master) so
 please quickly familiarise with it regarding the project structure and best practices.
@@ -67,7 +68,7 @@ source venv/bin/activate
 py -m pip freeze > requirements.txt
 ```
 
-To run the backend server:
+To run the backend server (with auto restart on file changes)
 ```bash
-flask run
+flask run --debug
 ```
