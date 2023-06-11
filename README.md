@@ -46,7 +46,16 @@ Navigate to the `backend` directory:
 cd backend
 ```
 
-This project uses [`venv` to manage packages](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment). Use the `requirements.txt` file to install the relevant packages. Anything regarding packages and their respective commands  should be done using the activated virtual environment.
+This project uses [`venv` to manage packages](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment).
+Use the `requirements.txt` file to install the relevant packages. Anything regarding packages and their respective commands  should be done using the activated virtual environment.
+
+Create a virtual environment:
+
+```bash
+py -m venv venv
+```
+The second argument is the location to create the virtual environment. You can call it anything you like, just make sure
+to use it consistently for the other steps. e.g. `py -m venv .env` will create the virtual environment in a folder called `.env`.
 
 ```bash
 py -m pip install -r requirements.txt
