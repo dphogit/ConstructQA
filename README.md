@@ -81,3 +81,13 @@ To run the backend server (with auto restart on file changes)
 ```bash
 flask run --debug
 ```
+
+### Jupyter Notebooks
+
+This project uses [Jupyter](https://jupyter.org/) to document scripts, experiments etc. when you want 
+step-by-step execution of code. It can be run with the help of your IDE (PyCharm, VSCode etc.) or on the browser.
+
+To run JupyterLab on the browser:
+```bash
+jupyter notebook
+```
