@@ -1,0 +1,64 @@
+[
+  {
+    "clauseNumber": "C1",
+    "heading": "Objectives of clauses C2 to C6 (protection from fire)",
+    "content": "The objectives of clauses C2 to C6 are to: (a) safeguard people from an unacceptable risk of injury or illness caused by fire, (b) protect other property from damage caused by fire, and (c) facilitate firefighting and rescue operations."
+  },
+  {
+    "clauseNumber": "C2",
+    "heading": "Prevention of fire occurring",
+    "subclauses": [
+      {
+        "clauseNumber": "C2.1",
+        "content": "Fixed appliances using controlled combustion and other fixed equipment must be designed, constructed, and installed in buildings in a way that reduces the likelihood of illness or injury due to fire occurring."
+      },
+      {
+        "clauseNumber": "C2.2",
+        "content": "The maximum surface temperature of combustible building materials close to fixed appliances using controlled combustion and other fixed equipment when operating at their design level must not exceed 90°C."
+      },
+      {
+        "clauseNumber": "C2.3",
+        "content": "Fixed appliances using controlled combustion and other fixed equipment must be designed, constructed and installed so that there is a low probability of explosive or hazardous conditions occurring within any spaces in or around the building that contains the appliances."
+      }
+    ]
+  },
+  {
+    "clauseNumber": "C3",
+    "heading": "Fire affecting areas beyond the fire source",
+    "subclauses": [
+      {
+        "clauseNumber": "C3.1",
+        "content": "Buildings must be designed and constructed so that there is a low probability of injury or illness to persons not in close proximity to a fire source."
+      },
+      {
+        "clauseNumber": "C3.2",
+        "content": "Buildings with a building height greater than 10 m where upper floors contain sleeping uses or other property must be designed and constructed so that there is a low probability of external vertical fire spread to upper floors in the building.",
+        "limitOnApplication": "Clause C3.2 does not apply to importance level 1 buildings."
+      },
+      {
+        "clauseNumber": "C3.3",
+        "content": "Buildings must be designed and constructed so that there is a low probability of fire spread to other property vertically or horizontally across a relevant boundary."
+      },
+      {
+        "clauseNumber": "C3.5",
+        "content": "Buildings must be designed and constructed so that fire does not spread more than 3.5 m vertically from the fire source over the external cladding of multi-level buildings."
+      },
+      {
+        "clauseNumber": "C3.6",
+        "content": "Buildings must be designed and constructed so that in the event of fire in the building the received radiation at the relevant boundary of the property does not exceed 30 kW/m2  and at a distance of 1 m beyond the relevant boundary of the property does not exceed 16 kW/m2."
+      },
+      {
+        "clauseNumber": "C3.7",
+        "content": "External walls of buildings that are located closer than 1 m to the relevant boundary of the property on which the building stands must either: (a) be constructed from materials which are not combustible building materials, or (b) for buildings in importance levels 3 and 4, be constructed from materials that, when subjected to a radiant flux of 30 kW/m2 , do not ignite for 30 minutes, or (c) for buildings in Importance Levels 1 and 2, be constructed from materials that, when subjected to a radiant flux of 30 kW/m2 , do not ignite for 15 minutes."
+      },
+      {
+        "clauseNumber": "C3.8",
+        "content": "Firecells located within 15 m of a relevant boundary that are not protected by an automatic fire sprinkler system, and that contain a fire load greater than 20 TJ or that have a floor area greater than 5,000 m2  must be designed and constructed so that at the time that firefighters first apply water to the fire, the maximum radiation flux at 1.5 m above the floor is no greater than 4.5 kW/m2  and the smoke layer is not less than 2 m above the floor."
+      },
+      {
+        "clauseNumber": "C3.9",
+        "content": "Buildings must be designed and constructed with regard to the likelihood and consequence of failure of any fire safety system intended to control fire spread."
+      }
+    ]
+  }
+]
