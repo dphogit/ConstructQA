@@ -38,7 +38,7 @@ The backend server is built using:
 - Flask for the web framework to develop the REST API
 - TODO: Add relevant ML packages
 
-### Installation and Setup
+### Installation
 
 Navigate to the `backend` directory:
 
@@ -76,6 +76,44 @@ py -m pip install -r requirements.txt
 ```bash
 py -m pip freeze > requirements.txt
 ```
+
+### Running the application
+
+#### Vector Database - Qdrant
+
+This project uses [Qdrant](https://qdrant.tech/) for it vector database to store embeddings. 
+
+As per the Quickstart guide, the easiest way to run Qdrant is using [Docker](https://docs.docker.com/get-docker/) so make
+sure you have that installed and setup.
+
+To get Qdrant running on the command line:
+
+Pull the Qdrant docker image:
+```bash
+docker pull qdrant/qdrant
+```
+
+Run a new container. Essentially what we do is:
+- We serve up the Qdrant REST API on `localhost:6333`
+- Store the data in the local `qdrant_storage` folder.
+- Assign the container a name `ConstructQA` so we can easily reference it later
+```bash
+docker run -p 6333:6333 -v $(pwd)/qdrant_storage:/qdrant/storage --name ConstructQA qdrant/qdrant
+```
+
+To stop the container:
+```bash
+docker stop ConstructQA
+```
+
+For subsequent runs you just start this container:
+```bash
+docker start ConstructQA
+```
+
+You can obviously also run the image using the Docker Desktop GUI if you prefer and have installed it using the same or your preferred settings.
+
+#### Server
 
 To run the backend server (with auto restart on file changes)
 ```bash
