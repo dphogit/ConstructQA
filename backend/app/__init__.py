@@ -4,6 +4,7 @@ from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
 
 from .config import QDRANT_HOST, QDRANT_PORT, SENTENCE_MODEL
+from .schema import validate_request_body, SearchReqBodySchema
 from .search import SearchRepository, SearchService, DEFAULT_TOP_K
 
 
@@ -16,26 +17,20 @@ def create_search_service():
 
 def create_app():
     app = Flask(__name__)
-    CORS(app, origins=["http://localhost:5173"])
+    CORS(app, origins=['http://localhost:5173'])
 
     search_service = create_search_service()
 
-    @app.get("/health-check")
+    @app.get('/health-check')
     def health_check_endpoint():
-        return {"status": "OK"}
+        return {'status': 'OK'}
 
-    @app.post("/search")
+    @app.post('/search')
+    @validate_request_body(SearchReqBodySchema)
     def search_endpoint():
         data = request.get_json()
-
-        # TODO Validate incoming request
-
-        query = data.get("query", None)
-        if query is None:
-            return {"error": "No query provided."}, 400
-
-        top_k = data.get("topK", DEFAULT_TOP_K)
-
+        query = data.get('query')
+        top_k = data.get('topK', DEFAULT_TOP_K)
         return search_service.search(query, top_k)
 
     return app
