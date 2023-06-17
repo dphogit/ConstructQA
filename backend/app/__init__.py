@@ -10,10 +10,9 @@ from app.schema import validate_request_body, SearchReqBodySchema
 from app.search import SearchRepository, SearchService, DEFAULT_TOP_K
 
 
-def create_search_service(qdrant_location: Optional[str] = None) -> SearchService:
-    qdrant_client = QdrantClient(qdrant_location)
+def create_search_service() -> SearchService:
     sentence_model = SentenceTransformer(SENTENCE_MODEL)
-    search_repository = SearchRepository(qdrant_client, sentence_model)
+    search_repository = SearchRepository(sentence_model)
     return SearchService(search_repository)
 
 
@@ -27,7 +26,7 @@ def create_app(test_config=None) -> Flask:
     if test_config is not None:
         app.config.update(test_config)
 
-    search_service = create_search_service(app.config['QDRANT_LOCATION'])
+    search_service = create_search_service()
 
     @app.get('/health-check')
     def health_check_endpoint():

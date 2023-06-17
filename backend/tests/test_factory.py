@@ -11,7 +11,10 @@ def test_config():
     Create the application with the test configuration.
     """
     assert not create_app().testing
-    assert create_app({'TESTING': True}).testing
+    assert create_app({
+        'TESTING': True,
+        'QDRANT_LOCATION': ':memory:',
+    }).testing
 
 
 def test_health_check(client: FlaskClient):
