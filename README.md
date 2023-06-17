@@ -120,6 +120,33 @@ To run the backend server (with auto restart on file changes)
 flask run --debug
 ```
 
+### Testing
+
+The backend uses [pytest](https://docs.pytest.org) for testing. To run the tests:
+```bash
+py -m pytest
+
+# To get a list of the functions tested rather than the dots use the verbose flag
+py -m pytest -v
+```
+
+To measure the code coverage of the tests:
+```bash
+py -m coverage run -m pytest
+```
+
+This generates a `.coverage` file. When you have this you can view the report in the terminal:
+```bash
+py -m coverage report
+```
+
+You can also alternatively view the report data in HTML:
+```bash
+py -m coverage html
+```
+
+Then open the `htmlcov/index.html` file.
+
 ### Jupyter Notebooks
 
 This project uses [Jupyter](https://jupyter.org/) to document scripts, experiments etc. when you want 
