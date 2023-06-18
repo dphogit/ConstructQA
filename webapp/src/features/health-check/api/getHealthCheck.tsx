@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { axios } from '../lib/axios';
+import { axios } from '@/lib/axios';
 
 export interface HealthCheckDTO {
   status: 'OK';
@@ -13,6 +13,6 @@ export function useGetHealthCheck() {
   return useQuery({
     queryKey: ['health-check'],
     queryFn: getHealthCheck,
-    select: data => data.status,
+    select: (data) => data.status,
   });
 }

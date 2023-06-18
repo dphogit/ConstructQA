@@ -1,30 +1,7 @@
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  Text,
-  Textarea,
-  Title,
-} from '@mantine/core';
-import { useGetHealthCheck } from './api/getHealthCheck';
+import { Button, Container, Flex, Textarea, Title } from '@mantine/core';
+import { HealthCheck } from '@/features/health-check';
 
-// TODO This is just starting code - do actual app dev in future PR
 function App() {
-  const healthCheckQuery = useGetHealthCheck();
-
-  function getHealthCheckStatus(): string {
-    if (healthCheckQuery.isLoading) {
-      return 'Loading...';
-    }
-
-    if (healthCheckQuery.isError) {
-      return 'Error';
-    }
-
-    return healthCheckQuery.data;
-  }
-
   return (
     <Container py="xl" size="xs">
       <Title order={1} align="center">
@@ -38,9 +15,7 @@ function App() {
         autosize
       />
       <Flex justify="space-between" align="center">
-        <Box>
-          <Text>Status: {getHealthCheckStatus()}</Text>
-        </Box>
+        <HealthCheck />
         <Button disabled>Ask (Coming Soon)</Button>
       </Flex>
     </Container>
