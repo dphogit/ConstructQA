@@ -8,7 +8,7 @@ The frontend web application is built using:
 - [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/docs/handbook/react.html) for app development
 - [Vite](https://vitejs.dev/) for the build tool
 - [Mantine](https://mantine.dev/) for the UI component library
-- [Tanstack React Query](https://tanstack.com/query/latest/docs/react/overview) for data fetching
+- [Tanstack React Query](https://tanstack.com/query/latest/docs/react/overview) and [Axios](https://axios-http.com/) for external data management
 
 The frontend follows the practices of the [Bulletproof-React Guide](https://github.com/alan2207/bulletproof-react/tree/master)
 so please briefly familiarise with it regarding the project structure and best practices.

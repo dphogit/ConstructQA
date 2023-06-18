@@ -55,7 +55,11 @@ class SearchService:
 
         Returns:
             A list of the top k hits from most similar to least similar.
-            Each hit is a dictionary containing the 'payload' and 'score'.
+            Each hit is a dictionary containing the `payload` and `score`.
+            The payload is a dictionary containing:
+                `clause`: The id of the clause. e.g. C3.8
+                `content`: The actual content of the clause.
+            The score is a float representing the similarity score.
         """
         return [
             {"payload": hit.payload, "score": hit.score}
