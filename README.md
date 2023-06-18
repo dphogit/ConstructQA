@@ -109,6 +109,9 @@ docker stop ConstructQA
 For subsequent runs you just start this container:
 ```bash
 docker start ConstructQA
+
+# The above will run it in the background, to run it in the foreground use the interactive flag
+docker stop -i ConstructQA
 ```
 
 You can obviously also run the image using the Docker Desktop GUI if you prefer and have installed it using the same or your preferred settings.
