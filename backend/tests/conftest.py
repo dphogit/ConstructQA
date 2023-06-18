@@ -30,26 +30,37 @@ def load_vectors_and_payload():
     return vectors, payload
 
 
+def init_test_db(app: Flask):
+    """Pre-populates an in-memory Qdrant database with test data (fire clauses).
+    See `with_test_db` for a convenient wrapper for this function.
+
+    Examples
+    --------
+    >>> def test_endpoint(app: Flask):
+    ...     with app.app_context():
+    ...         init_test_db(app)
+    ...         # Testing logic
+    """
+    vectors, payload = load_vectors_and_payload()
+    qdrant_client = get_qdrant()
+    qdrant_client.recreate_collection(
+        collection_name=app.config['QDRANT_COLLECTION_NAME'],
+        vectors_config=VectorParams(size=vectors.shape[1], distance=Distance.COSINE)
+    )
+    qdrant_client.upload_collection(
+        collection_name=app.config['QDRANT_COLLECTION_NAME'],
+        vectors=vectors,
+        payload=payload
+    )
+
+
 @pytest.fixture
 def app():
     app = create_app({
         'TESTING': True,
         'QDRANT_LOCATION': ':memory:',
+        'QDRANT_COLLECTION_NAME': 'test',
     })
-
-    # Populate the in-memory Qdrant database with test data
-    with app.app_context():
-        vectors, payload = load_vectors_and_payload()
-        qdrant_client = get_qdrant()
-        qdrant_client.recreate_collection(
-            collection_name='test',
-            vectors_config=VectorParams(size=vectors.shape[1], distance=Distance.COSINE)
-        )
-        qdrant_client.upload_collection(
-            collection_name='test',
-            vectors=vectors,
-            payload=payload
-        )
 
     yield app
 

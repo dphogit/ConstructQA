@@ -12,11 +12,10 @@ import pandas as pd
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import VectorParams, Distance
 
-from config import QDRANT_STORAGE_DIR, QDRANT_HOST, QDRANT_PORT, DATA_DIR, ROOT_DIR, QDRANT_COLLECTION_NAME
+from config import QDRANT_HOST, QDRANT_PORT, DATA_DIR, QDRANT_COLLECTION_NAME
 
 if __name__ == "__main__":
-    # Create the Qdrant client and provide the path location to persist changes to disk
-    qdrant_storage_path = os.path.join(ROOT_DIR, QDRANT_STORAGE_DIR)
+    # Create the Qdrant client to use for populating the database
     qdrant_client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
 
     # Load the fire clauses with numpy
@@ -45,5 +44,3 @@ if __name__ == "__main__":
         vectors=vectors,
         payload=payload
     )
-
-    print(f"Uploaded vectors to Local Qdrant in the {QDRANT_STORAGE_DIR} directory successfully")

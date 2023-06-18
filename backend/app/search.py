@@ -1,8 +1,8 @@
 from typing import List, Dict
 
+from flask import current_app
 from sentence_transformers import SentenceTransformer
 
-from app.config import QDRANT_COLLECTION_NAME
 from app.db import get_qdrant
 
 DEFAULT_TOP_K = 5
@@ -19,17 +19,17 @@ class SearchRepository:
         self.__model = model
 
     def search(self, query: str, top_k: int = DEFAULT_TOP_K):
-        """
-        Searches for the most similar documents to the query.
+        """Searches for the most similar documents to the query.
 
         Args:
             query: The query to search for.
             top_k: The number of results to return. Defaults to 5.
         """
         client = get_qdrant()
+        print(client.get_collections())
         query_vector = self.__model.encode(query).tolist()
         return client.search(
-            collection_name=QDRANT_COLLECTION_NAME,
+            collection_name=current_app.config['QDRANT_COLLECTION_NAME'],
             query_vector=query_vector,
             limit=top_k,
             with_payload=True
@@ -47,8 +47,7 @@ class SearchService:
         self.__repository = repository
 
     def search(self, query: str, top_k: int = DEFAULT_TOP_K) -> List[Dict]:
-        """
-        Searches for the most semantically similar documents to the query.
+        """Searches for the most semantically similar documents to the query.
 
         Args:
             query: The query to search for.

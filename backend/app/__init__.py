@@ -1,11 +1,10 @@
-from typing import Optional
-
 from flask import Flask, request
 from flask_cors import CORS
 from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
 
 from app.config import SENTENCE_MODEL
+from app.db import get_qdrant
 from app.schema import validate_request_body, SearchReqBodySchema
 from app.search import SearchRepository, SearchService, DEFAULT_TOP_K
 
