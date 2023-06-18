@@ -1,6 +1,5 @@
 from flask import Flask, request
 from flask_cors import CORS
-from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
 
 from app.config import SENTENCE_MODEL

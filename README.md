@@ -113,6 +113,12 @@ docker start ConstructQA
 
 You can obviously also run the image using the Docker Desktop GUI if you prefer and have installed it using the same or your preferred settings.
 
+There is a script to populate the Qdrant database with the relevant data. Once
+you have the Qdrant container running, you can run the script:
+```bash
+py app/init_clauses.py
+```
+
 #### Server
 
 To run the backend server (with auto restart on file changes)

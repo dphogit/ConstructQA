@@ -32,11 +32,16 @@ if __name__ == "__main__":
         for rec in df.to_dict(orient='records')
     ]
 
+    print(f"Recreating collection '{QDRANT_COLLECTION_NAME}'...")
+
     # Delete and recreate the collection
     qdrant_client.recreate_collection(
         collection_name=QDRANT_COLLECTION_NAME,
         vectors_config=VectorParams(size=vector_dimension, distance=Distance.COSINE)
     )
+
+    print(f"Collection '{QDRANT_COLLECTION_NAME}' recreated")
+    print(f"Uploading vectors to collection '{QDRANT_COLLECTION_NAME}'...")
 
     # Insert the vectors with corresponding payload (clause id's) into the collection
     qdrant_client.upload_collection(
@@ -44,3 +49,6 @@ if __name__ == "__main__":
         vectors=vectors,
         payload=payload
     )
+
+    print(f"Vectors uploaded to collection '{QDRANT_COLLECTION_NAME}'")
+    print('Database initialisation completed')
