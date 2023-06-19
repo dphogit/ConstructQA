@@ -26,7 +26,6 @@ class SearchRepository:
             top_k: The number of results to return. Defaults to 5.
         """
         client = get_qdrant()
-        print(client.get_collections())
         query_vector = self.__model.encode(query).tolist()
         return client.search(
             collection_name=current_app.config['QDRANT_COLLECTION_NAME'],
@@ -53,13 +52,17 @@ class SearchService:
             query: The query to search for.
             top_k: The number of results to return. Defaults to 5.
 
-        Returns:
-            A list of the top k hits from most similar to least similar.
-            Each hit is a dictionary containing the `payload` and `score`.
+        Return:
+            A list of the top k hits ranked by similarity score descending.
+            Each hit is a dictionary containing the following keys:
+
+            - **payload** (`dict`) -- The payload of the hit (see below).
+            - **score** (`float`) -- The similarity score of the hit.
+
             The payload is a dictionary containing:
-                `clause`: The id of the clause. e.g. C3.8
-                `content`: The actual content of the clause.
-            The score is a float representing the similarity score.
+
+            - **clause** (`str`) -- The id of the clause. e.g. C3.8
+            - **content** (`str`) -- The actual content of the clause.
         """
         return [
             {"payload": hit.payload, "score": hit.score}
