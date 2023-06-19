@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { API_URL } from '../config';
+import { API_URL } from '@/config';
 
 /**
  * Custom axios instance with some ease of life configurations.
@@ -13,15 +13,13 @@ export const axios = Axios.create({
   baseURL: API_URL,
 });
 
-axios.interceptors.request.use(
-  (config) => {
-    // eslint-disable-next-line no-param-reassign
-    config.headers['Content-Type'] = 'application/json';
-    return config;
-  }
-);
+axios.interceptors.request.use((config) => {
+  // eslint-disable-next-line no-param-reassign
+  config.headers['Content-Type'] = 'application/json';
+  return config;
+});
 
 axios.interceptors.response.use(
   (response) => response.data,
-  (error) => Promise.reject(error),
+  (error) => Promise.reject(error)
 );
