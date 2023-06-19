@@ -50,31 +50,48 @@ This project uses [`venv` to manage packages](https://packaging.python.org/en/la
 
 Create a virtual environment:
 
+Windows:
 ```bash
 py -m venv venv
 ```
+MacOS:
+```bash
+python -m venv venv
+```
+
 The second argument is the location to create the virtual environment. You can call it anything you like, just make sure
 to use it consistently for the other steps. e.g. `py -m venv .env` will create the virtual environment in a folder called `.env`.
 
 Activate the virtual environment:
-
+Windows:
 ```bash
-# Windows
 .\venv\Scripts\activate
-
-# Unix/MacOS
+```
+Unix/MacOS:
+```bash
 source venv/bin/activate
 ```
 
 Use the `requirements.txt` file to install the relevant packages. Anything regarding packages and their respective commands  should be done using the activated virtual environment.
+
+Windows:
 ```bash
 py -m pip install -r requirements.txt
+```
+MacOS:
+```bash
+python -m pip install -r requirements.txt
 ```
 
 **Note:** Every time you install new packages (not the initial setup), make sure to update the `requirements.txt` file:
 
+Windows:
 ```bash
 py -m pip freeze > requirements.txt
+```
+MacOS:
+```bash
+python -m pip freeze > requirements.txt
 ```
 
 ### Running the application
@@ -132,26 +149,52 @@ flask run --debug
 ### Testing
 
 The backend uses [pytest](https://docs.pytest.org) for testing. To run the tests:
+Windows:
 ```bash
 py -m pytest
-
-# To get a list of the functions tested rather than the dots use the verbose flag
+```
+MacOS:
+```bash
+python -m pytest
+```
+To get a list of the functions tested rather than the dots use the verbose flag
+Windows:
+```bash
+py -m pytest -v
+```
+MacOS:
+```bash
 py -m pytest -v
 ```
 
 To measure the code coverage of the tests:
+Windows:
 ```bash
 py -m coverage run -m pytest
 ```
+MacOS:
+```bash
+python -m coverage run -m pytest
+```
 
 This generates a `.coverage` file. When you have this you can view the report in the terminal:
+Windows:
 ```bash
 py -m coverage report
 ```
+MacOS:
+```bash
+python -m coverage report
+```
 
 You can also alternatively view the report data in HTML:
+Windows:
 ```bash
 py -m coverage html
+```
+MacOS:
+```bash
+python -m coverage html
 ```
 
 Then open the `htmlcov/index.html` file.
