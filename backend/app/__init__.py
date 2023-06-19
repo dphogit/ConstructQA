@@ -28,14 +28,23 @@ def create_app(test_config=None) -> Flask:
 
     @app.get('/health-check')
     def health_check_endpoint():
+        """Health check endpoint to ensure the service is running."""
         return {'status': 'OK'}
 
     @app.post('/search')
     @validate_request_body(SearchReqBodySchema)
     def search_endpoint():
+        """Search endpoint to find the most similar clauses to a query."""
         data = request.get_json()
         query = data.get('query')
         top_k = data.get('topK', DEFAULT_TOP_K)
         return search_service.search(query, top_k)
+
+    @app.post('/query')
+    def query_endpoint():
+        """Query endpoint to provide an answer to a question."""
+        data = request.get_json()
+        query = data.get('query')
+        # TODO Implement endpoint
 
     return app

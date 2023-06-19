@@ -31,3 +31,7 @@ def validate_non_empty_string(value: str):
 class SearchReqBodySchema(Schema):
     query = fields.Str(required=True, validate=validate_non_empty_string)
     topK = fields.Int(strict=True, validate=validate.Range(min=1, max=15))
+
+
+class QueryReqBodySchema(Schema):
+    query = fields.Str(required=True, validate=validate_non_empty_string)
