@@ -23,11 +23,11 @@ class QuestionAnsweringService:
         Args:
             query: The query to answer.
             top_k: The number of documents to search for and extract answers from. Defaults to 5.
-            all_searched: Whether to return all the answers from the top k documents or just the top answer. Defaults
-                to False.
+            all_searched: Whether to return all the answers from the top k documents or just the top answer.
+                If `True`, returns the list of answer results in descending score order. Defaults to `False`.
 
         Returns:
-            A `dict` or `list` of `dict`s. These `dict`s contain the following keys:
+            A `dict` or `list` of `dict`s which are the answer results. The `dict`s contain the following keys:
 
             - **answer** (`str`) -- The answer to the query.
             - **score** (`float`) -- The probability associated with the answer.
