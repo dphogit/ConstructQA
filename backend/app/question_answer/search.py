@@ -9,7 +9,7 @@ DEFAULT_TOP_K = 5
 
 
 class SearchRepository:
-    """Data access layer logic for searching for similar clauses.
+    """Data access layer logic for searching for similar documents.
 
     Args:
         model: Sentence transformer model to encode clauses into vectors.
@@ -19,7 +19,7 @@ class SearchRepository:
         self.__model = model
 
     def search(self, query: str, top_k: int = DEFAULT_TOP_K):
-        """Searches for the most similar documents to the query.
+        """Searches for the most similar documents to the query in the database.
 
         Args:
             query: The query to search for.
@@ -36,7 +36,7 @@ class SearchRepository:
 
 
 class SearchService:
-    """Service to handle searching for the application logic layer.
+    """Service to handle searching for related documents.
 
     Args:
         repository (SearchRepository): The repository to perform the data access logic.
