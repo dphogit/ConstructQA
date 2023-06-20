@@ -1,20 +1,14 @@
-import { Box, Center, Container, Title } from '@mantine/core';
-import { HealthCheck } from '@/features/health-check';
+import { Container } from '@mantine/core';
 import { QuestionAnswer } from '@/features/question-answer';
+import { AppLayout } from '@/components/AppLayout';
 
 function App() {
   return (
-    <Container py="xl" size="xs">
-      <Box mb="xl">
-        <Title order={1} align="center">
-          👷‍♀️ ConstructQA 👷‍♂️
-        </Title>
-        <Center>
-          <HealthCheck />
-        </Center>
-      </Box>
-      <QuestionAnswer />
-    </Container>
+    <AppLayout>
+      <Container>
+        <QuestionAnswer />
+      </Container>
+    </AppLayout>
   );
 }
 

@@ -1,24 +1,28 @@
-import { Box } from '@mantine/core';
+import { Badge } from '@mantine/core';
 import { useGetHealthCheck } from '../api/getHealthCheck';
 
 export function HealthCheck() {
   const healthCheckQuery = useGetHealthCheck();
 
-  function getHealthCheckStatus(): string {
-    if (healthCheckQuery.isLoading) {
-      return 'Loading...';
-    }
+  if (healthCheckQuery.isLoading) {
+    return (
+      <Badge color="gray" variant="dot">
+        Loading status...
+      </Badge>
+    );
+  }
 
-    if (healthCheckQuery.isError) {
-      return 'Error';
-    }
-
-    return healthCheckQuery.data;
+  if (healthCheckQuery.isError) {
+    return (
+      <Badge color="red" variant="dot">
+        System Down
+      </Badge>
+    );
   }
 
   return (
-    <Box>
-      <Box>Status: {getHealthCheckStatus()}</Box>
-    </Box>
+    <Badge color="green" variant="dot">
+      Connected
+    </Badge>
   );
 }
