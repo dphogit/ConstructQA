@@ -1,9 +1,11 @@
 import { Container, Header, Title } from '@mantine/core';
 import { HealthCheck } from '@/features/health-check';
 
+export const HEADER_HEIGHT = '60px';
+
 export function AppHeader() {
   return (
-    <Header height={60}>
+    <Header height={HEADER_HEIGHT}>
       <Container
         sx={{
           display: 'flex',

@@ -8,7 +8,7 @@ const theme: MantineThemeOverride = {
   components: {
     Container: {
       defaultProps: {
-        size: 'sm',
+        size: 'md',
       },
     },
   },

@@ -9,7 +9,7 @@ interface LayoutProps {
 export function AppLayout({ children }: LayoutProps) {
   return (
     <AppShell
-      padding="md"
+      padding={0}
       header={<AppHeader />}
       styles={(theme) => ({
         main: { backgroundColor: theme.colors.gray[0] },
