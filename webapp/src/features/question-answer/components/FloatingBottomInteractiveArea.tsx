@@ -1,4 +1,4 @@
-import { Anchor, Box, Text } from '@mantine/core';
+import { Anchor, Box, Container, Text } from '@mantine/core';
 import { QuestionInput } from './QuestionInput';
 
 const BUILDING_CODES_COMPLIANCE_HREF =
@@ -8,7 +8,11 @@ function Disclaimer() {
   return (
     <Text align="center" mt="xs" fz="xs" color="dimmed">
       ConstructQA is a research project designed to answer questions about the{' '}
-      <Anchor href={BUILDING_CODES_COMPLIANCE_HREF}>
+      <Anchor
+        href={BUILDING_CODES_COMPLIANCE_HREF}
+        target="_blank"
+        rel="norefferer"
+      >
         NZ building compliance codes
       </Anchor>
       . Use at your own discretion.
@@ -19,8 +23,10 @@ function Disclaimer() {
 export function FloatingBottomInteractiveArea() {
   return (
     <Box pos="absolute" w="100%" bottom={0} pb={32}>
-      <QuestionInput />
-      <Disclaimer />
+      <Container>
+        <QuestionInput />
+        <Disclaimer />
+      </Container>
     </Box>
   );
 }

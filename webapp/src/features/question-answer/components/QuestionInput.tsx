@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { createStyles, Stack, Textarea } from '@mantine/core';
 import { SendQuestionButton } from './SendQuestionButton';
+import { useQAContext } from '../store/QuestionAnswerContext.tsx';
+import { useAskQuestionMutation } from '@/features/question-answer/api/question.tsx';
 
 const useStyles = createStyles({
   wrapper: {
@@ -17,13 +19,23 @@ const useStyles = createStyles({
 export function QuestionInput() {
   const { classes } = useStyles();
 
+  const { addMessage } = useQAContext();
+
+  const askQuestionMutation = useAskQuestionMutation();
+
   const [textAreaValue, setTextAreaValue] = useState<string>('');
 
   const isSendDisabled = textAreaValue.trim().length === 0;
 
   function sendQuestion() {
-    console.log(textAreaValue);
+    const question = textAreaValue.trim();
     setTextAreaValue('');
+    addMessage({ content: question, sender: 'user' });
+    askQuestionMutation.mutate(question, {
+      onSuccess: (answerData) => {
+        addMessage({ content: answerData.answer, sender: 'ai' });
+      },
+    });
   }
 
   function sendIfEnterPressed(event: React.KeyboardEvent<HTMLTextAreaElement>) {
@@ -46,7 +58,10 @@ export function QuestionInput() {
       aria-label="Textarea to ask ConstructQA a question"
       rightSection={
         <Stack h="100%" justify="flex-end" pb={12}>
-          <SendQuestionButton disabled={isSendDisabled} />
+          <SendQuestionButton
+            disabled={isSendDisabled}
+            onClick={sendQuestion}
+          />
         </Stack>
       }
       rightSectionWidth={64}
