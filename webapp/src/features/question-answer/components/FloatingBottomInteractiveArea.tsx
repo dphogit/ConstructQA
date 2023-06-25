@@ -1,5 +1,6 @@
 import { Anchor, Box, Container, Text } from '@mantine/core';
 import { QuestionInput } from './QuestionInput';
+import { SIDEBAR_WIDTH } from '@/components/AppLayout';
 
 const BUILDING_CODES_COMPLIANCE_HREF =
   'https://www.building.govt.nz/building-code-compliance/';
@@ -22,7 +23,14 @@ function Disclaimer() {
 
 export function FloatingBottomInteractiveArea() {
   return (
-    <Box pos="absolute" w="100%" bottom={0} pb={32}>
+    <Box
+      pos="fixed"
+      w={`calc(100% - ${SIDEBAR_WIDTH}px)`}
+      bottom={0}
+      pt={32}
+      pb={32}
+      bg="linear-gradient(180deg, hsla(0,0%,100%,0), #fff 50%)"
+    >
       <Container>
         <QuestionInput />
         <Disclaimer />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppShell } from '@mantine/core';
-import { AppHeader } from './AppHeader';
+import { AppSidebar } from './AppSidebar';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface LayoutProps {
 
 export function AppLayout({ children }: LayoutProps) {
   return (
-    <AppShell padding={0} header={<AppHeader />}>
+    <AppShell padding={0} navbar={<AppSidebar />}>
       {children}
     </AppShell>
   );

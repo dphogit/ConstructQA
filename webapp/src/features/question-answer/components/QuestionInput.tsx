@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { createStyles, Stack, Textarea } from '@mantine/core';
 import { SendQuestionButton } from './SendQuestionButton';
-import { useQAContext } from '../store/QuestionAnswerContext.tsx';
-import { useAskQuestionMutation } from '@/features/question-answer/api/question.tsx';
+import { useQAContext } from '../store/QuestionAnswerContext';
+import { useAskQuestionMutation } from '../api/question';
 
 const useStyles = createStyles({
   wrapper: {
