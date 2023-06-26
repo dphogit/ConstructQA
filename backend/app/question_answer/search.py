@@ -9,7 +9,7 @@ DEFAULT_TOP_K = 5
 
 
 class SearchRepository:
-    """Data access layer logic for searching for similar clauses.
+    """Data access layer logic for searching for similar documents.
 
     Args:
         model: Sentence transformer model to encode clauses into vectors.
@@ -19,14 +19,13 @@ class SearchRepository:
         self.__model = model
 
     def search(self, query: str, top_k: int = DEFAULT_TOP_K):
-        """Searches for the most similar documents to the query.
+        """Searches for the most similar documents to the query in the database.
 
         Args:
             query: The query to search for.
             top_k: The number of results to return. Defaults to 5.
         """
         client = get_qdrant()
-        print(client.get_collections())
         query_vector = self.__model.encode(query).tolist()
         return client.search(
             collection_name=current_app.config['QDRANT_COLLECTION_NAME'],
@@ -37,7 +36,7 @@ class SearchRepository:
 
 
 class SearchService:
-    """Service to handle searching for the application logic layer.
+    """Service to handle searching for related documents.
 
     Args:
         repository (SearchRepository): The repository to perform the data access logic.
@@ -53,13 +52,17 @@ class SearchService:
             query: The query to search for.
             top_k: The number of results to return. Defaults to 5.
 
-        Returns:
-            A list of the top k hits from most similar to least similar.
-            Each hit is a dictionary containing the `payload` and `score`.
+        Return:
+            A list of the top k hits ranked by similarity score descending.
+            Each hit is a dictionary containing the following keys:
+
+            - **payload** (`dict`) -- The payload of the hit (see below).
+            - **score** (`float`) -- The similarity score of the hit.
+
             The payload is a dictionary containing:
-                `clause`: The id of the clause. e.g. C3.8
-                `content`: The actual content of the clause.
-            The score is a float representing the similarity score.
+
+            - **clause** (`str`) -- The id of the clause. e.g. C3.8
+            - **content** (`str`) -- The actual content of the clause.
         """
         return [
             {"payload": hit.payload, "score": hit.score}

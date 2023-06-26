@@ -5,6 +5,13 @@ import '@fontsource-variable/open-sans';
 
 const theme: MantineThemeOverride = {
   fontFamily: 'Open Sans, sans-serif',
+  components: {
+    Container: {
+      defaultProps: {
+        size: 'md',
+      },
+    },
+  },
 };
 
 interface ThemeProviderProps {
