@@ -1,0 +1,300 @@
+[
+    
+    {
+        "clause": "B1—Objectives of clauses B2 to C6 (Structure)",
+        "content": "The objective of this provision is to: (a) safeguard people from injury caused by structural failure, (b) safeguard people from loss of amenity caused by structural behaviour, and (c) protect other property from physical damage caused by structural failure."
+    },
+    {
+        "clause": "B1.2",
+        "content": "Buildings, building elements and sitework shall withstand the combination of loads that they are likely to experience during construction or alteration and throughout their lives."
+    },
+    {
+        "clause": "B1.3.1",
+        "content": "Buildings, building elements and sitework shall have a low probability of rupturing, becoming unstable, losing equilibrium, or collapsing during construction or alteration and throughout their lives."
+    },
+    {
+        "clause": "B1.3.2",
+        "content": "Buildings, building elements and sitework shall have a low probability of causing loss of amenity through undue deformation, vibratory response, degradation, or other physical characteristics throughout their lives, or during construction or alteration when the building is in use."
+    },
+    {
+        "clause": "B1.3.3",
+        "content": "Account shall be taken of all physical conditions likely to affect the stability of buildings, building elements and sitework, including: (a) self-weight, (b) imposed gravity loads arising from use, (c) temperature, (d) earth pressure, (e) water and other liquids, (f) earthquake, (g) snow, (h) wind, (i) fire, (j) impact, (k) explosion, (l) reversing or fluctuating effects, (m) differential movement, (n) vegetation, (o) adverse effects due to insufficient separation from other buildings, (p) influence of equipment, services, non-structural elements and contents, (q) time dependent effects including creep and shrinkage, and (r) removal of support."
+    },
+    {
+        "clause": "B1.3.4",
+        "content": "Due allowance shall be made for: (a) the consequences of failure, (b) the intended use of the building, (c) effects of uncertainties resulting from construction activities, or the sequence in which construction activities occur, (d) variation in the properties of materials and the characteristics of the site, and (e) accuracy limitations inherent in the methods used to predict the stability of buildings."
+    },
+    {
+        "clause": "B1.3.5",
+        "content": "The demolition of buildings shall be carried out in a way that avoids the likelihood of premature collapse."
+    },
+    {
+        "clause": "B1.3.6",
+        "content": "Sitework, where necessary, shall be carried out to: (a) provide stability for construction on the site, and (b) avoid the likelihood of damage to other property."
+    },
+    {
+        "clause": "B1.3.7",
+        "content": "Any sitework and associated supports shall take account of the effects of: (a) changes in ground water level, (b) water, weather and vegetation, and (c) ground loss and slumping."
+    },
+    {
+        "clause": "NZS 4229 7.8.3",
+        "content": "All slab-on-ground reinforcing shall extend to within 75 mm of the outside edge of the slab (including the foundation wall) and shall consist of a minimum 2.27kg/m2 welded Grade 500E reinforcing mesh sheets (1.14 kg/m2 in each direction), which shall be lapped at sheet joints such that the overlap measurement between the outermost cross wires of each fabric sheet is equal to the greater of one of the following: - the spacing of cross wires plus 50 mm; - 150 mm; or - the manufacturer’s requirements. Slabs shall have a maximum dimension of 18 m between free joints"
+    },
+    {
+        "clause": "NZS 3604 7.5.8.8",
+        "content": "At free joints, slab reinforcement shall be terminated and there shall be no bonding between vertical concrete faces (prevented by using building paper or a bituminous coating). R12 dowel bars 600 mm long shall be placed at 300 mm centres along the free joint and lapped 300 mm with slab reinforcement on both sides of the joint. All dowel bars on one side of the joint shall have a bond breaker applied, e.g. by wrapping dowel bars for 300 mm with petrolatum tape. Joint dowel bars must be installed in a single plane, in true alignment and parallel."
+    },
+    {
+        "clause": "NZS 3604 1.1.5",
+        "content": "Buildings on expansive soils shall be supported on slab-on-ground foundations complying with 7.5.13 and in addition to 1.1.2 shall be limited as follows: (a)single storey, stand-alone household unit, and (b)maximum length or width of floor of 24.0 m including any attached garage, and (c) simple plan shapes such as rectangular, L, T or boomerang, and (d)concrete slab-on-ground with a minimum thickness of 100 mm and a minimum concrete compressive strength of 20 MPa, and (e)simple roof forms, incorporating hips, valleys, gables or mono pitches, and (f) maximum overall height of 7.0 m to roof apex from lowest cleared ground level, and (g)maximum roof height of 3.0 m, and (h)roof slope between 10° and 35° from the horizontal, and (i) maximum span of roof truss 12.0 m, and (j) external walls maximum of 2.4 m height studs, other than gable end walls and walls to mono-pitched roofs, which shall not exceed 4.0 m."
+    },
+    {
+        "clause": "NZS 3604 7.5.13.1.1",
+        "content": "Should reasonable enquiry as outlined in 3.1.3 show any signs of expansive soils, the expansive soil class, as defined in AS 2870, shall be established by one or all of: (a) enquiry to the local territorial authority, and/or (b)reference to the certificate of suitability issued in terms of NZS 4431, and/or (c)a soil test undertaken by a suitably qualified soils engineer."
+    },
+    {
+        "clause": "NZS 3604 7.5.13.1.2",
+        "content": "Expansive soil class shall be defined as: (a)Slightly ‘S’, having an Iss range of 0–1.9%, and a 500 year design characteristic surface movement return (ys) of 22 mm, or (b)Moderately ‘M’, having an Iss range of 2.0–3.7% and a 500 year design characteristic surface movement return (y ) of 44 mm, or (c)Highly ‘H’, having an Iss range of 3.8–6.5%and a 500 year design characteristic surface movement return (ys) of 78 mm, or (d) Extremely ‘E’, having an Iss range of 6.6–7.5% and a 500 year design characteristic surface movement return (ys) of 90 mm."
+    },
+    {
+        "clause": "NZS 3604 7.5.13.2",
+        "content": "The aspect ratio of the concrete slabs or bays of concrete slabs, such as in the case of L, T or boomerang concrete slab shapes, shall not exceed 5 to 1 (length to width)."
+    },
+    {
+        "clause": "NZS 3604 7.5.13.3.2",
+        "content": "For the identified expansive soil class the foundation details, external and internal thickenings shall be as follows. (a) For light wall claddings refer to Table 7.4A and Figure 7.22. (b)For medium wall or heavy wall claddings refer to Table 7.4B and Figure 7.23."
+    },
+    {
+        "clause": "NZS 4299 2.3",
+        "content": "The earthquake zone factor > 0.6 shall apply to the Canterbury earthquake region."
+    },
+    {
+        "clause": "NZS 4299 4.8.6",
+        "content": "The thickness and reinforcement and detail of concrete slabs shall comply with the requirements of NZS 3604 as modified in B1/AS1 Paragraph 3.1."
+    },
+    {
+        "clause": "B1/AS3 1.1.1",
+        "content": "The acceptable solutions described in this document are for chimneys built of brickwork, concrete or precast pumice concrete, that are connected to timber frame or masonry buildings complying with NZS 3604 or NZS 4229."
+    },
+    {
+        "clause": "B1/AS3 1.1.2",
+        "content": "The height of any chimney measured from the top of the chimney foundation slab to the top of the chimney stack shall not exceed 9 m. Chimneys shall not cantilever more than 2.4 m above the fixing at roof level (refer Paragraph 1.7)."
+    },
+    {
+        "clause": "B1/AS3 1.1.3",
+        "content": "The width (measured along the building line) and depth (measured perpendicular to the building line) shall not exceed: a) For the foundation and chimney base – precast pumice concrete 1600 mm wide x 1050 mm deep – brickwork or concrete 1200 mm wide x 1050 mm deep b) For a brick chimney stack – single skin (see Figure 2) 500 mm wide x 500 mm deep – double skin (see Figure 3) 1200 mm wide x 680 mm deep c) For a concrete or precast pumice concrete chimney stack 1200 mm wide x 700 mm deep"
+    },
+    {
+        "clause": "B1/AS3 1.1.4",
+        "content": "Where chimney liners are used they are to be separated from the chimney to ensure free thermal movement. This shall be achieved by coating the liner with a suitable debonding agent or by wrapping it in a combustible material no less than 0.25 mm thick."
+    },
+    {
+        "clause": "B1/AS3 1.2.1",
+        "content": "Chimney wall thickness shall be no less than: a) Brick – single skin (see Figure 2) 155 mm – double skin (see Figure 3) 245 mm b) Concrete 170 mm c) Precast pumice concrete 85 mm These thicknesses apply to the chimney stack, gather and chimney base."
+    },
+    {
+        "clause": "B1/AS3 1.3.1",
+        "content": " Chimneys shall be built on a foundation comprising walls and slab for suspended floors (see Figure 1(a)), or on a thickened slab for floor slabs on ground (see Figure 1(b))"
+    },
+    {
+        "clause": "B1/AS3 1.3.2",
+        "content": "The chimney foundation slab shall be constructed in reinforced concrete, founded on good ground, and have: a) A thickness of no less than 200 mm, and be placed at a depth of no less than 300 mm below surrounding ground level. b) Reinforcement as shown in Figure 1. c) D12 starters at 400 mm maximum centres, to match vertical steel locations in the chimney."
+    },
+    {
+        "clause": "B1/AS3 1.3.3",
+        "content": "The chimney foundation walls shall be 150 mm thick reinforced concrete, 190 mm thick concrete masonry, or brick construction complying with Figures 2 or 3. Vertical and horizontal reinforcing steel shall be as given in Paragraph 1.6."
+    },
+    {
+        "clause": "B1/AS3 1.4.1",
+        "content": "Hearth slabs shall be of concrete no less than 75 mm thick, reinforced with D10 bars located centrally at 225 mm centres each way."
+    },
+    {
+        "clause": "B1/AS3 1.6.1",
+        "content": "Reinforcing of foundation walls, chimney bases (including the gathers) and chimney stacks (see Figures 2 to 5 inclusive) shall comprise: a) D12 bars at 400 mm maximum centres vertically. Laps in bars shall be no less than 300 mm. b) R6 bars at 200 mm centres horizontally. These will be in the form of closed stirrups in the stack and U bars elsewhere. c) Double horizontal reinforcing at any change in direction of the vertical steel (e.g. at the gather/stack intersection)"
+    },
+    {
+        "clause": "B1/AS3 1.6.2",
+        "content": "Bars which do not extend for the full height of the chimney shall be stopped in the gather: a) In reinforced concrete and brick, by continuing these bars through to the far face of the gather and terminating with a 200 mm leg. b) In precast pumice concrete, by anchoring the last 200 mm of the bar in a high strength cementitious grout."
+    },
+    {
+        "clause": "B1/AS3 1.7.1",
+        "content": "Chimneys which are not constructed integrally with the building shall be secured by floor and roof brackets. An acceptable alternative for brick and precast pumice concrete chimneys is that they be restrained by a roof tie used in conjunction with closely spaced wall ties. (Refer Paragraphs 1.7.5 to 1.7.16.)"
+    },
+    {
+        "clause": "B1/AS3 1.7.2",
+        "content": "Where a packer (see Figures 2, 3, 6 and 7(b)) is shown between the chimney and building it shall be: a) Concrete, brick, steel (angle, channel or Z section), or any insulating material which has a long term operating temperature of no less than 150°C, b) Secured in place to prevent it dislodging, and c) Capable of withstanding a compressive force of 10 kN without shortening by more than 1.5 mm."
+    },
+    {
+        "clause": "B1/AS3 1.7.3",
+        "content": "The brackets shall comprise a 50 mm x 4 mm hot dip galvanised steel strap placed around the chimney. Each leg of the strap shall be horizontal and shall be bolted to the joists with three M12 bolts at 75 mm centres."
+    },
+    {
+        "clause": "B1/AS3 1.7.4",
+        "content": "Brackets shall be located so that the distance between the top of the chimney foundation slab and the first bracket, and the distance between adjacent brackets does not exceed 3.0 m. Where a chimney foundation wall is integral with a building foundation wall, then the height to the first bracket may be measured from the top of the building foundation wall."
+    },
+    {
+        "clause": "B1/AS3 1.7.5",
+        "content": "This alternative chimney fixing shall apply only from the gather to roof level. It requires that either the top of the chimney foundation slab or a floor bracket complying with Paragraph 1.7.3 be located within a distance of 2.5 m below the first of the closely spaced wall ties. If the latter applies, the chimney below this bracket shall be fixed by floor brackets spaced in accordance with Paragraph 1.7.4."
+    },
+    {
+        "clause": "B1/AS3 1.7.6",
+        "content": "Brick chimneys shall be restrained at roof level by a zinc coated 50 x 1.0 mm mild steel ‘U’ strap used in conjunction with closely spaced wall ties. The strap shall be: a) Cast into the grout and wrap around the reinforcing steel (see Figures 2 and 3), b) Placed at no more than 20° from the horizontal, c) Used in conjunction with a packer (complying with Paragraph 1.7.2) placed at the same level, and d) Fixed with twelve 30 x 3.15 mm galvanised nails to roof or ceiling framing."
+    },
+    {
+        "clause": "B1/AS3 1.7.7",
+        "content": "Wall ties shall be located in mortar joints at 225 mm maximum centres up each side of the chimney, except that pairs of ties shall be used for chimneys wider than 600 mm."
+    },
+    {
+        "clause": "B1/AS3 1.7.8",
+        "content": "Wall ties shall be constructed from either 4 mm diameter galvanised bar or 25 x 1.5 mm zinc coated steel strip capable of withstanding a load of 1.2 kN without elongating or shortening by more than 1.5 mm."
+    },
+    {
+        "clause": "B1/AS3 1.7.9",
+        "content": "Where zinc coating of components is required it shall be no less than 300 g/m2 in accordance with AS 1397."
+    },
+    {
+        "clause": "B1/AS3 1.7.10",
+        "content": "Nails used to fix straps to roof or ceiling framing shall be spaced at no less than 35 mm in Radiata Pine, and 70 mm in other timbers."
+    },
+    {
+        "clause": "B1/AS3 1.7.11",
+        "content": "Acceptable alternatives to the cast-in ‘U’ strap are: a) Any proprietary bracing strip system of equal durability to the ‘U’ strap described in Paragraph 1.7.6, and capable of carrying a seismic force of 12 kN without elongating by more than 1.5 mm, or b) A cast-in hot dip galvanised, deformed 6.0 mm reinforcing bar bent to a ‘U’ shape, with each end fixed to the roof or ceiling framing with six 50 x 4.0 mm galvanised fencing staples."
+    },
+    {
+        "clause": "B1/AS3 1.7.12",
+        "content": "The ‘U’ strap or either of the acceptable alternatives may be wrapped around the outside of the chimney rather than be cast-in, provided that if strap is used it shall be painted with a zinc rich primer."
+    },
+    {
+        "clause": "B1/AS3 1.7.13",
+        "content": "Precast pumice concrete chimneys shall be restrained at roof level either by a 50 x 1 mm ‘U’ strap wrapped around the chimney, or by a hot dip galvanised deformed 6 mm reinforcing bar placed into the grout around the reinforcing steel, together with either fixing brackets or fixing ties (see Figure 7(b)). Straps and bars shall satisfy the relevant requirements of Paragraphs 1.7.6 to 1.7.12."
+    },
+    {
+        "clause": "B1/AS3 1.7.14",
+        "content": "Fixing brackets (see Figure 7(b)) shall be made from 5.0 mm thick mild steel angle and drilled with: a) A 50 mm diameter hole to suit the reinforcing duct location, and b) A 14 mm diameter hole for the 12 mm diameter coach screw fixing to the double stud."
+    },
+    {
+        "clause": "B1/AS3 1.7.15",
+        "content": "Fixing brackets shall be located in mortar joints between the units, and be spaced at no less than 480 mm centres for stacks up to 600 mm wide, and no less than 320 mm centres for stacks wider than 600 mm."
+    },
+    {
+        "clause": "B1/AS3 1.7.16",
+        "content": "Fixing ties shall comprise 4 mm galvanised wire hairpins, which are hooked behind the reinforcing ducts and secured to the required adjacent double studding with four heavy duty fencing staples. The ties shall be located in mortar joints between the units and be at no less than 320 mm centres for stacks up to 600 mm wide, and no less than 160 mm centres for stacks wider than 600 mm."
+    },
+    {
+        "clause": "B1/AS3 1.8.1",
+        "content": "Brick chimney construction shall conform to the relevant sections of NZS 4210."
+    },
+    {
+        "clause": "B1/AS3 1.8.2",
+        "content": "Chimneys, foundations and hearth slabs of reinforced concrete, shall comply with the relevant clauses of NZS 3109 for ordinary grade concrete."
+    },
+    {
+        "clause": "B1/AS3 1.8.3",
+        "content": "Pumice concrete units for use in precast chimneys shall: a) Have pumice aggregate which: i) is free of combustible and organic matter, and ii) has a maximum aggregate size of no greater than 19 mm, with at least 40% but not more than 60% of the aggregate retained by a 4.75 mm standard test sieve, and b) Have a mix ratio by volume of no more than five parts of mixed pumice aggregate to one part of cement, c) Have a compressive strength of no less than 7 MPa at 28 days when cured and tested in accordance with NZS 3112: Part 2, d) After adequate curing, be air dried and kept under cover during storage, transport and on the site, e) Be laid dry. (Work left unfinished should be protected from rain.) f) Be joined with mortar which complies with NZS 4210, and STRUCTURE SMALL CHIMNEYS g) Have ducts filled with grout complying with NZS 4210, except over the last 200 mm where bars are anchored in the gather (refer Paragraph 1.6.2 b)). At these locations a non-shrinking cement-based grout, which attains a minimum compressive strength of 30 MPa at 7 days, shall be use"
+    },
+    {
+        "clause": "B1/AS3 1.8.4",
+        "content": "Concrete masonry construction for chimney foundation walls shall conform to the relevant sections of NZS 4229."
+    },
+    {
+        "clause": "B1/AS3 1.8.5",
+        "content": "Reinforcing used in chimneys is to conform to AS/NZS 4671, and shall: a) For brick, be embedded centrally in the thickness of the grout, b) For in-situ concrete, have cover to the steel in accordance with NZS 3109, c) For precast pumice concrete, be placed with grout in the preformed ducts in the units."
+    },
+    {
+        "clause": "B1/AS3 1.8.6",
+        "content": "Hot dip galvanising shall comply with AS/NZS 4680."
+    },
+    {
+        "clause": "B1/AS3 1.9.1",
+        "content": "The bracing described in Paragraphs 1.9.2 to 1.9.6 shall be provided in those buildings where one or more of the following apply: a) The area of the room containing the chimney exceeds 24 m2, b) The length of the wall on which the chimney is located exceeds 3.5 m between supporting braced walls which are perpendicular to it. This length may be increased to 6.5 m where the wall is supported, at each floor level and at the roof or ceiling level, by either a structural diaphragm which conforms with the relevant requirements of NZS 3604 or by dragon ties. The dragon ties shall: i) consist of a continuous length of 100 x 50 mm timber fixed in accordance with NZS 3604 clauses 8.3.3.3 and 8.3.3.4, ii) be run as a pair, with one dragon tie going from the wall on which the chimney is located, back to each of the supporting braced walls. The enclosed angle between the wall on which the chimney is located and each dragon tie shall be 60°, and iii) be located no more than 1.5 m out from each supporting braced wall. c) The floor area on any level of the building, for a given chimney type (see Table 2), is less than: i) 50 m2 for chimney Type 1, ii) 75 m2 for chimney Types 2, 3 and 4, iii) 150 m2 for chimney Types 5, 6 and 7"
+    },
+    {
+        "clause": "B1/AS3 1.9.2",
+        "content": "he building supporting the chimney shall contain bracing elements to resist earthquake loads from the chimney. These loads are applied at roof level and at each floor to which the chimney is connected. The bracing elements necessary are additional to those required by NZS 3604 or NZS 4229."
+    },
+    {
+        "clause": "B1/AS3 1.9.4",
+        "content": "A chimney shall be considered as connected to the building when: a) At roof level: it is held either by a roof bracket or by a roof tie, b) At ground floor level: it is held by a floor bracket or the chimney base is integral with the building foundation wall, c) At an intermediate floor level: it is held either by a floor bracket or by closely spaced wall ties spanning the floor."
+    },
+    {
+        "clause": "B1/AS3 1.9.5",
+        "content": "For earthquake ground movement in the direction perpendicular to the wall on which the chimney is located, structural diaphragms shall be provided at roof/ceiling level and at each floor level to which the chimney is connected. The diaphragms shall comply with all relevant clauses of NZS 3604 and NZS 4229."
+    },
+    {
+        "clause": "B1/AS3 1.9.6",
+        "content": "For earthquake in the direction parallel to the wall on which the chimney is located, the bracing units required as determined from Paragraph 1.9.3 shall be provided solely by that wall."
+    },
+    {
+        "clause": "B1/AS3 2.2.1",
+        "content": "Solid fuel burning domestic appliances weighing no more than 130 kg shall be supported on a 65 mm thick hearth slab that is: a) Reinforced with 665 mesh, or D10 rods at 300 mm centres each way, placed centrally in the slab thickness, b) Supported on a timber or concrete floor, or integral with a concrete floor. (The floor supporting the hearth slab shall comply with NZS 3604 or NZS 4229 as appropriate), and c) Comprised of ordinary grade concrete complying with the relevant clauses of NZS 3109."
+    },
+    {
+        "clause": "B1/AS3 2.2.2",
+        "content": "Hearth slabs on a timber floor shall be held in position by supporting members on all four sides of the hearth. These members shall each be held by four screws with a minimum shank diameter of 4.88 mm that penetrate the floor framing by 50 mm."
+    },{
+        "clause": "B1/AS3 2.2.3",
+        "content": "Hearth slabs on concrete floors shall be secured in position by four D10 starter rods. The rods shall be located in each corner of the hearth slab and they shall terminate each end with standard hooks complying with NZS 3109."
+    },
+    {
+        "clause": "B1/AS3 2.2.4",
+        "content": "Paragraphs 2.2.1 to 2.2.3 provide an acceptable structural solution, but depending on the particular installation, different hearth dimensions may be necessary to meet the spread of fire requirements of NZBC Clause C2.2. Hearth slabs for solid fuel burning appliances shall comply with AS/NZS 2918."
+    },
+    {
+        "clause": "B1/VM4 1.0.1",
+        "content": "This document covers the ultimate limit state design of foundations, including those of earth retaining structures. Methods are given for determining ultimate bearing and lateral sliding strengths."
+    },
+    {
+        "clause": "B1/VM4 1.0.3",
+        "content": "Serviceability limit state deformations are not covered in this document. The determination of such deformations and their acceptability to the design in question needs to be considered but is outside the scope of this document."
+    },
+    {
+        "clause": "B1/VM4 1.0.4",
+        "content": "This document assumes general ground or slope stability and provides methods only for ensuring against local failure of the foundation. Overall ground stability needs to be verified before this document can be applied; this is outside the scope of this verification method."
+    },
+    {
+        "clause": "B1/VM4 2.0.4",
+        "content": "oundations may be shallow or deep. A shallow foundation is one in which the depth from the ground surface to the underside of the foundation is less than five times the width of the foundation. All other foundations are considered to be deep."
+    },
+    {
+        "clause": "B1/VM4 2.0.5",
+        "content": "In assigning values for soil parameters the worst groundwater condition shall be considered."
+    },
+    {
+        "clause": "B1/VM4 2.0.6",
+        "content": "Foundation strength for cohesive soil depends on loading duration and whether consolidation can occur. For this reason the distinction is made between short term (e.g. initial load application, earthquake actions or wind gusts) and long term loading (e.g. permanent loads such as foundation dead load). For the short term case no consolidation occurs and the calculations shall be in terms of undrained shear strength (i.e. shear strength of the soil su) and total stress. For long term loading, full consolidation occurs and the calculations shall be in terms of drained shear strength and effective stress"
+    },
+    {
+        "clause": "B1/VM4 2.0.7",
+        "content": "For cohesionless soils consolidation occurs very quickly so drained strength shall be used in all cases."
+    },
+    {
+        "clause": "B1/VM4 5.1.1",
+        "content": "Precast concrete piles, including prestressed piles, shall withstand without damage or significant cracking, the stresses arising from manufacture, handling and transportation, in addition to those arising from driving and imposed loadings."
+    },
+    {
+        "clause": "B1/VM4 5.1.2",
+        "content": "Belled bases of cast-in-situ concrete piles shall be no less than 100 mm thick at the edge of the required base and, unless the bell is reinforced, the conical surfaces shall slope at an angle from the horizontal of no less than 60°."
+    },
+    {
+        "clause": "B1/VM4 5.2.1",
+        "content": " The design of steel piles shall be based on the nett steel section after deducting an appropriate thickness for future loss by corrosion. This verification method does not describe a means of determining the amount of corrosion and proposals must be submitted to the territorial authority for approval."
+    },
+    {
+        "clause": "B1/VM4 5.2.2",
+        "content": "Allowance for corrosion loss need not be made for steel encased in concrete provided cover to the steel is no less than: a) 30 mm for prestressed concrete, b) 50 mm for precast concrete, c) 75 mm for cast-in-situ concrete."
+    },
+    {
+        "clause": "B1/VM4 5.3.1",
+        "content": "Timber piles shall comply with NZS 3605 or NZS 3603 as applicable, and be naturally durable or treated to the appropriate hazard level as recommended by NZS 3640."
+    },
+    
+    {
+        "clause": "",
+        "content": ""
+    },
+    {
+        "clause": "",
+        "content": ""
+    }
+
+]
