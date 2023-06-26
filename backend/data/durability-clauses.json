@@ -1,0 +1,98 @@
+[
+    {
+        "clause": "B2.1",
+        "content": "The objective of this provision is to ensure that a building will throughout its life continue to satisfy the other objectives of this code."
+    },
+    {
+        "clause": "B2.2",
+        "content": "Building materials, components and construction methods shall be sufficiently durable to ensure that the building, without reconstruction or major renovation, satisfies the other functional requirements of this code throughout the life of the building."
+    },
+    {
+        "clause": "B2.3.1",
+        "content": "Building elements must, with only normal maintenance, continue to satisfy the performance requirements of this code for the lesser of the specified intended life of the building, if stated, or: (a) the life of the building, being not less than 50 years, if: (i) those building elements (including floors, walls, and fixings) provide structural stability to the building, or (ii) those building elements are difficult to access or replace, or (iii) failure of those building elements to comply with the building code would go undetected during both normal use and maintenance of the building. (b) 15 years if: (i) those building elements (including the building envelope, exposed plumbing in the subfloor space, and in-built chimneys and flues) are moderately difficult to access or replace, or (ii) failure of those building elements to comply with the building code would go undetected during normal use of the building, but would be easily detected during normal maintenance. (c) 5 years if: (i) the building elements (including services, linings, renewable protective coatings, and fixtures) are easy to access and replace, and (ii) failure of those building elements to comply with the building code would be easily detected during normal use of the building."
+    },
+    {
+        "clause": "B2.3.2",
+        "content": "Individual building elements which are components of a building system and are difficult to access or replace must either: (a) all have the same durability, or (b) be installed in a manner that permits the replacement of building elements of lesser durability without removing building elements that have greater durability and are not specifically designed for removal and replacement."
+    },
+    {   
+        "clause": "B2/VM1 1.0.1",
+        "content": "Verification that the durability of a building element complies with the NZBC B2.3.1 and B2.3.2 will be by proof of performance and shall take into account the expected in-service exposure conditions by one or more of the following: a) In-service history, b) Laboratory testing, c) Comparable performance of similar building elements."
+    },
+    {
+        "clause": "B2/VM1 1.1.1",
+        "content": "Verification of durability based on in- service history of a building element, including materials, components and systems shall take into account but not be limited to: a) Length of service, b) Environment of use, c) Intensity of use, d) Any reaction with adjacent materials, e) Limitations in performance, f) Degree of degradation, and g) Changes in formulation."
+    },
+    {
+        "clause": "B2/VM1 1.2.1",
+        "content": "Verification of durability based on successful performance in a laboratory test shall be accompanied by an assessment of the tests performed, their relevance to field and service conditions, and in particular: a) Types of degradation mechanisms likely to be induced by testing, b) The degradation mechanisms likely in service, c) Details of methods of assessment, d) Variability of results, and e) The relevance of the test to the building element under study."
+    },
+    {
+        "clause": "B2/VM1 1.3.1",
+        "content": "For the purposes of evaluation, a building element may be considered as similar to another building element with proven performance, if both are subject to the same controls for composition and overall performance. Examples of such controls are Approved Documents or Standards. Where such a direct comparison is not possible, the building element shall be independently assessed to determine the degree of similarity."
+    },
+    {
+        "clause": "B2/VM1 1.3.2",
+        "content": "Assessment shall take into account but not be limited to: a) Product composition, b) Method and quality assurance of manufacture, c) Degradation mechanisms, d) Local environment, e) Conditions of use, f) Required maintenance, and g) Performance in use."
+    },
+    {
+        "clause": "B2/AS1 1.0.1",
+        "content": "This acceptable solution applies to materials and components required to satisfy the performances specified in other NZBC clauses."
+    },
+    {
+        "clause": "B2/AS1 1.1.1",
+        "content": "Building elements, including materials, components and systems, complying with a publication referenced in the Acceptable Solutions and Verification Methods, satisfy B2 requirements only when the conditions of use stated in the publication and Acceptable Solutions and Verification Methods prevail."
+    },
+    {
+        "clause": "B2/AS1 1.2.1a",
+        "content": "Difficult to access or replace – applies to building elements where access or replacement involves significant removal or alteration of other building elements. Examples are works involving the removal of masonry or concrete construction, or structural elements or repair of buried tanking membranes. A 50 year durability is required."
+    },
+    {
+        "clause": "B2/AS1 1.2.1b",
+        "content": "Moderately difficult to access or replace – applies to building elements where access or replacement involves the removal or alteration of other building elements. Examples are the replacement of services reticulation in wall cavities and skillion roofs, or of plant and hotwater cylinders built into roof spaces without adequately sized access openings. A 15 year durability is required."
+    },
+    {
+        "clause": "B2/AS1 1.2.1c",
+        "content": "Easy to access and replace – applies to building elements where access or replacement involves little alteration or removal of other building elements. Examples are linings, trim, light fittings, hotwater cylinder elements and door hardware, or where specific provision for removal has been made. A 5 year durability is required."
+    },
+    {
+        "clause": "B2/AS1 1.2.1d",
+        "content": "Failure to comply with the NZBC would go undetected during both normal use and maintenance of the building – applies where the building elements are hidden from view with no provision for inspection access, and failure would not be apparent until significant damage had occurred to other building elements. Examples are building paper behind a masonry veneer cladding, and insulation in a skillion roof. A 50 year durability is required."
+    },
+    {
+        "clause": "B2/AS1 1.2.1e",
+        "content": "Failure to comply with the NZBC would go undetected during normal use of the building but would be easily detected during normal maintenance – applies where normal maintenance will identify faults unlikely to be observed by building occupants until significant damage has occurred. Examples are degradation of exterior claddings on roofs and walls, sealant filled joints, flashings, services with specific provision for inspection access, chimneys and flues. A 15 year durability is required."
+    },
+    {
+        "clause": "B2/AS1 1.2.1f",
+        "content": "Failure to comply with the NZBC would be easily detected during normal use of the building – applies where the failure is obvious to the building occupants. Examples are exposed building elements which are damaged or inoperative such as protective finishes, essential signs, sticking doors, slip resistant surfaces, stair treads and surface-run building services equipment. A 5 year durability is required."
+    },
+    {
+        "clause": "B2/AS1 2.1.1",
+        "content": "Normal maintenance is that work generally recognised as necessary to achieve the expected durability for a given building element. The extent and nature of that maintenance will depend on the material, or system, its geographical location and position within the building, and can involve the replacement of components subject to accelerated wear."
+    },
+    {
+        "clause": "B2/AS1 2.1.2",
+        "content": "It is the responsibility of the person specifying the building element to determine normal maintenance requirements. These may be based on the manufacturer’s recommendations and may also include periodic inspections of elements not readily observable without a specific effort (e.g. access to roof or subfloor spaces)."
+    },
+    {
+        "clause": "B2/AS1 2.1.3",
+        "content": "Basic normal maintenance tasks shall include but not be limited to: a) Where applicable, following manufacturers’ maintenance recommendations, b) Washing down surfaces, particularly exterior building elements subject to wind driven salt spray, c) Re-coating interior and exterior protective finishes, d) Replacing sealant, seals and gaskets in joints, e) Replacing valves, washers and similar high wear components in easily accessed service equipment and other building elements, f) Cleaning and replacing filters in building services systems, g) The regular servicing of boilers, cooling towers, lifts, escalators, emergency lighting and fire protection equipment, and h) The maintenance of signs for access, escape routes, emergency equipment and hazardous areas."
+    },
+    {
+        "clause": "B2/AS1 2.2.1",
+        "content": "Scheduled maintenance comprises the inspection, maintenance and reporting procedures for building elements required to have a compliance schedule in terms of section 100 of the Building Act. By those procedures the building elements concerned are effectively deemed to have a durability of the life of the building because they are required to perform as designed at all times. The relevant maintenance procedures may include total replacement."
+    },
+    {
+        "clause": "B2/AS1 3.2.2.2",
+        "content": "Preservative-free (untreated) solid Douglas fir framing may be used for roof members protected from the weather, floor members protected from the weather and not exposed to ground atmosphere, and for internal and external wall framing protected from the weather provided that the building meets all of the following requirements: a) is a stand alone, single household unit of no more than two storeys (as defined in NZS 3604) and designed and constructed to NZS 3604, and b) is situated in wind zones no greater than High as defined in NZS 3604, and c) has an envelope complexity of no greater than medium risk and a deck design no greater than low risk as defined by the risk matrix in E2/AS1, and d) has drained and vented cavities complying with E2/AS1 behind all claddings, and e) uses roof and wall cladding systems and details conforming with Acceptable Solution E2/AS1, and f) has a risk matrix score of no more than 6 on any external wall face as defined in E2/AS1, and g) has a simple pitched roof incorporating hips, valleys, gables, or mono pitches, all draining directly to external gutters; but excluding internal or secret gutters, concealed gutters behind fascias, or any roof element finishing within the boundaries formed by exterior walls (eg, the lower ends of aprons, chimneys, dormers, clerestories, box windows, etc), and h) has a roof slope of not less than 10°, and i) if it has a skillion roof, then the roofing material shall be corrugated iron or concrete, metal or clay tiles to ensure adequate ventilation, and j) has eaves 450 mm wide or greater for single storey houses, and eaves 600 mm or greater for two storey houses."
+    },
+    {
+        "clause": "NZS 3640 B2.3.1",
+        "content": "Timber used for structural purposes is required to be durable in-service for the life of the building, being not less than 50 years unless the building has a specified intended life. This is applicable to hazard classes H1.2, H3.2, H4, H5, and H6. Structural timber refers to timber that has been graded to characteristic strength and stiffness properties. The minimum requirement for a H1.2 treatment for timber framing is to provide protection in-service but the preservative treatment is not designed for extended exposure to elevated moisture content. Timber used for non-structural purposes, such as H1.1 and H3.1 is required to be durable in-service for a minimum of 5 years and 15 years respectively."
+    },
+    {
+        "clause": "NZS 4223.2 5.3",
+        "content": "Insulating glass units shall be permanently and clearly marked. As a minimum, marking shall include the following: (a) The name or registered trademark of the manufacturer or supplier; (b) The date of manufacture (use the year as the minimum), and (c) Complies with NZS 4223.2:2016. Marking shall be visible after the IGU has been installed, and must be legible and durable for the life of the unit. NOTE - (1) Etching and permanent laser marking are acceptable means for marking insulating glass units. Externally affixed adhesive labels are not acceptable. (2) Additional marking may be used by the manufacturer.” "
+    }
+]
