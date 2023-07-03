@@ -21,8 +21,8 @@ htmlcov/
 # Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints
 
-# Ignore vector embedding files from numpy
-*.npy
+# Ignore data files
+backend/data/*
 
 # Ignore Qdrant storage
 qdrant_storage
