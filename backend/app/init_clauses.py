@@ -18,19 +18,15 @@ if __name__ == "__main__":
     # Create the Qdrant client to use for populating the database
     qdrant_client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
 
-    # Load the fire clauses with numpy
-    fire_clauses_path = os.path.join(DATA_DIR, 'fire-clauses.npy')
-    vectors = np.load(fire_clauses_path)
+    # Load all the clauses from the numpy file
+    clauses_path = os.path.join(DATA_DIR, 'clause_vectors.npy')
+    vectors = np.load(clauses_path)
     vector_dimension = vectors.shape[1]
 
     # Create the corresponding payload for the vectors.
-    payload_path = os.path.join(DATA_DIR, 'fire-clauses.json')
-    df = pd.read_json(payload_path)
-    df['limitOnApplication'].fillna('', inplace=True)
-    payload = [
-        {'clause': rec['clause'], 'content': f"{rec['content']} {rec['limitOnApplication']}"}
-        for rec in df.to_dict(orient='records')
-    ]
+    payload_path = os.path.join(DATA_DIR, 'clauses_df.csv')
+    df = pd.read_csv(payload_path)
+    payload = df.to_dict(orient='records')
 
     print(f"Recreating collection '{QDRANT_COLLECTION_NAME}'...")
 
