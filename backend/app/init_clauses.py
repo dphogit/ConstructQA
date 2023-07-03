@@ -26,6 +26,9 @@ if __name__ == "__main__":
     # Create the corresponding payload for the vectors.
     payload_path = os.path.join(DATA_DIR, 'clauses_df.csv')
     df = pd.read_csv(payload_path)
+    df = df.rename(
+        columns={'Atomic Clause': 'atomicClause', 'Code': 'code', 'Content': 'content', 'Group Clause': 'groupClause'}
+    )
     payload = df.to_dict(orient='records')
 
     print(f"Recreating collection '{QDRANT_COLLECTION_NAME}'...")

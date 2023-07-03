@@ -83,9 +83,19 @@ python -m pip freeze > requirements.txt
 
 #### Vector Database - Qdrant
 
+Make sure to grab the relevant data files from the Google Drive folder and place them in the `backend/data` folder.
+
+All clauses (required to run the seed script):
+- `clause_vectors.npy`
+- `clauses_df.csv`
+
+For testing:
+- `fire-clauses.json`
+- `fire-clauses.npy` (this can also be produced by running all cells in the [`fire-clauses.ipynb`](./backend/notebooks/fire-clauses.ipynb) notebook)
+
 This project uses [Qdrant](https://qdrant.tech/) for it vector database to store embeddings. 
 
-As per the Quickstart guide, the easiest way to run Qdrant is using [Docker](https://docs.docker.com/get-docker/) so make
+As per the Qdrant Quickstart guide, the easiest way to run Qdrant is using [Docker](https://docs.docker.com/get-docker/) so make
 sure you have that installed and setup.
 
 To get Qdrant running on the command line:
