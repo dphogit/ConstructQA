@@ -1,70 +1,40 @@
-import React, { useState } from 'react';
-import { createStyles, Stack, Textarea } from '@mantine/core';
-import { SendQuestionButton } from './SendQuestionButton';
-import { useQAContext } from '../store/QuestionAnswerContext';
-import { useAskQuestionMutation } from '../api/question';
+import React, { useRef } from 'react';
+import { IconSearch } from '@tabler/icons-react';
+import { TextInput } from '@mantine/core';
 
-const useStyles = createStyles({
-  wrapper: {
-    backgroundColor: 'white',
-    paddingTop: 8,
-    paddingBottom: 8,
-    paddingLeft: 16,
-    paddingRight: 16,
-    borderRadius: 16,
-    boxShadow: '0 0 24px rgba(0, 0, 0, 0.1)',
-  },
-});
+interface QuestionInputProps {
+  isDisabled?: boolean;
+  onSendQuestion?: (question: string) => void;
+}
 
-export function QuestionInput() {
-  const { classes } = useStyles();
-
-  const { addMessage } = useQAContext();
-
-  const askQuestionMutation = useAskQuestionMutation();
-
-  const [textAreaValue, setTextAreaValue] = useState<string>('');
-
-  const isSendDisabled = textAreaValue.trim().length === 0;
+export function QuestionInput({
+  isDisabled,
+  onSendQuestion,
+}: QuestionInputProps) {
+  const ref = useRef<HTMLInputElement | null>(null);
 
   function sendQuestion() {
-    const question = textAreaValue.trim();
-    setTextAreaValue('');
-    addMessage({ content: question, sender: 'user' });
-    askQuestionMutation.mutate(question, {
-      onSuccess: (answerData) => {
-        addMessage({ content: answerData.answer, sender: 'ai' });
-      },
-    });
+    const query = ref.current?.value;
+    if (!query) return;
+
+    onSendQuestion?.(query);
   }
 
-  function sendIfEnterPressed(event: React.KeyboardEvent<HTMLTextAreaElement>) {
-    if (event.key === 'Enter' && !event.shiftKey && !isSendDisabled) {
-      event.preventDefault();
+  function sendIfEnterPressed(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === 'Enter') {
       sendQuestion();
     }
   }
 
   return (
-    <Textarea
-      value={textAreaValue}
-      onChange={(event) => setTextAreaValue(event.currentTarget.value)}
+    <TextInput
+      ref={ref}
       onKeyDown={sendIfEnterPressed}
-      classNames={{ wrapper: classes.wrapper }}
-      variant="unstyled"
-      size="md"
-      autosize
-      placeholder="Ask ConstructQA a question"
-      aria-label="Textarea to ask ConstructQA a question"
-      rightSection={
-        <Stack h="100%" justify="flex-end" pb={12}>
-          <SendQuestionButton
-            disabled={isSendDisabled}
-            onClick={sendQuestion}
-          />
-        </Stack>
-      }
-      rightSectionWidth={64}
+      aria-label="Question Input"
+      placeholder="Ask a question..."
+      size="xl"
+      icon={<IconSearch />}
+      disabled={isDisabled}
     />
   );
 }
