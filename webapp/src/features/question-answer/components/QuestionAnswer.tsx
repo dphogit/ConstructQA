@@ -3,9 +3,13 @@ import { Disclaimer } from './Disclaimer';
 import { QuestionInput } from './QuestionInput';
 
 export function QuestionAnswer() {
+  function sendQuestion(question: string) {
+    console.log(question);
+  }
+
   return (
     <Container pt={64}>
-      <QuestionInput onSendQuestion={console.log} />
+      <QuestionInput onSendQuestion={sendQuestion} />
       <Disclaimer />
     </Container>
   );

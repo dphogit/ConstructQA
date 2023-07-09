@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
-import { IconSearch } from '@tabler/icons-react';
-import { TextInput } from '@mantine/core';
+import React, { useState } from 'react';
+import { Box, CloseButton, Group, TextInput } from '@mantine/core';
+import { ExampleQuestions } from './ExampleQuestions';
+import { SendQuestionButton } from './SendQuestionButton';
 
 interface QuestionInputProps {
   isDisabled?: boolean;
@@ -11,30 +12,68 @@ export function QuestionInput({
   isDisabled,
   onSendQuestion,
 }: QuestionInputProps) {
-  const ref = useRef<HTMLInputElement | null>(null);
+  const [query, setQuery] = useState<string>('');
 
-  function sendQuestion() {
-    const query = ref.current?.value;
-    if (!query) return;
+  function sendQuery(q: string) {
+    const validQuery = q.trim();
+    if (!validQuery || isDisabled) return;
 
-    onSendQuestion?.(query);
+    onSendQuestion?.(validQuery);
   }
 
   function sendIfEnterPressed(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === 'Enter') {
-      sendQuestion();
+      sendQuery(query);
     }
   }
 
-  return (
-    <TextInput
-      ref={ref}
-      onKeyDown={sendIfEnterPressed}
-      aria-label="Question Input"
-      placeholder="Ask a question..."
-      size="xl"
-      icon={<IconSearch />}
-      disabled={isDisabled}
+  function handleExampleQuestionClick(question: string) {
+    if (question.trim() === query.trim()) return;
+
+    setQuery(question);
+    sendQuery(question);
+  }
+
+  const isEmptyQuery = !query.trim();
+
+  const sendQuestionBtn = (
+    <SendQuestionButton
+      disabled={isEmptyQuery || isDisabled}
+      onClick={() => sendQuery(query)}
     />
+  );
+
+  const rightSection = isEmptyQuery ? (
+    sendQuestionBtn
+  ) : (
+    <Group>
+      <CloseButton
+        size="md"
+        radius="xl"
+        iconSize={16}
+        onClick={() => setQuery('')}
+        aria-label="Clear Input"
+      />
+      {sendQuestionBtn}
+    </Group>
+  );
+
+  return (
+    <>
+      <ExampleQuestions onQuestionClick={handleExampleQuestionClick} />
+      <Box pt={48}>
+        <TextInput
+          value={query}
+          onChange={(event) => setQuery(event.currentTarget.value)}
+          onKeyDown={sendIfEnterPressed}
+          aria-label="Question Input"
+          placeholder="Ask a question..."
+          size="lg"
+          disabled={isDisabled}
+          rightSectionWidth={!isEmptyQuery ? 100 : undefined}
+          rightSection={rightSection}
+        />
+      </Box>
+    </>
   );
 }
