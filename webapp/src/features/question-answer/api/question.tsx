@@ -3,7 +3,11 @@ import { axios } from '@/lib/axios.tsx';
 
 export interface AnswerResultDTO {
   answer: string;
-  score: number;
+  atomicClause: string;
+  groupClause: string;
+  similarityScore: number;
+  answerScore: number;
+  clauseContent: string;
 }
 
 function askQuestion(query: string): Promise<AnswerResultDTO> {

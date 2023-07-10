@@ -19,9 +19,9 @@ interface ExampleQuestionsProps {
 }
 
 const EXAMPLE_QUESTIONS: string[] = [
+  'How high must the smoke be above the floor when firefighters put out a fire with water?',
   'What is the minimum amount of escape routes an occupied space in a building shall have?',
   'Given a column is partly embedded in firm soil, what is the minimum depth of the end restraint?',
-  'How high must the smoke be above the floor when firefighters put out a fire with water?',
 ];
 
 export function ExampleQuestions({ onQuestionClick }: ExampleQuestionsProps) {

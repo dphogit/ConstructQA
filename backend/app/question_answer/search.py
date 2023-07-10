@@ -61,10 +61,10 @@ class SearchService:
 
             The payload is a dictionary containing:
 
-            - **clause** (`str`) -- The id of the clause. e.g. C3.8
+            - **atomicClause** (`str`) -- The unique clause of the document that the answer was extracted from.
+            - **groupClause** (`str`) -- The grouping clause of the document that the answer was extracted from.
             - **content** (`str`) -- The actual content of the clause.
         """
-        return [
-            {"payload": hit.payload, "score": hit.score}
-            for hit in self.__repository.search(query, top_k)
-        ]
+        results = [{"payload": hit.payload, "score": hit.score} for hit in self.__repository.search(query, top_k)]
+        results.sort(key=lambda r: r['score'], reverse=True)
+        return results
