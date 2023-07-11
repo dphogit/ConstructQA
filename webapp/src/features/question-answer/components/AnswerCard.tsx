@@ -38,7 +38,7 @@ export function AnswerCard({ question, answerDto }: AnswerCardProps) {
             <Text size="sm" color="dimmed">
               Confidence: {formatScore(answerDto.answerScore)}
             </Text>
-            <Popover width={300} withArrow>
+            <Popover width={300} shadow="xl">
               <Popover.Target>
                 <Button
                   compact
@@ -53,12 +53,13 @@ export function AnswerCard({ question, answerDto }: AnswerCardProps) {
               </Popover.Target>
               <Popover.Dropdown>
                 <Text size="sm">
-                  Similarity measures how similar the found clause is to the
-                  question asked.
+                  <strong>Similarity</strong> measures how similar the found
+                  clause is to the question asked.
                 </Text>
                 <Text size="sm" mt="xs">
-                  Confidence measures the probability that the extracted answer
-                  is correct given the found clause and the question asked.
+                  <strong>Confidence</strong> measures the probability that the
+                  extracted answer is correct given the found clause and the
+                  question asked.
                 </Text>
               </Popover.Dropdown>
             </Popover>

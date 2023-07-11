@@ -16,7 +16,7 @@ export function QuestionAnswer() {
   }
 
   return (
-    <Container pt="md" pb={48}>
+    <Container pt="xs" pb={48}>
       <QuestionInput onSendQuestion={sendQuestion} />
       {askQuestionMutation.isLoading && (
         <Stack align="center" spacing="xs" mt="xl">
@@ -34,7 +34,7 @@ export function QuestionAnswer() {
           />
           <Box mt={64}>
             <Title order={4} px="xs">
-              Other Similar Clauses
+              Similar Clauses
             </Title>
             <Box mt="xs">
               {askQuestionMutation.data.slice(1).map((answerDto) => (
