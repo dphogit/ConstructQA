@@ -13,8 +13,9 @@ def is_answer_shape(answer) -> bool:
     has_similarity_score = 'similarityScore' in answer and isinstance(answer['similarityScore'], float)
     has_answer_score = 'answerScore' in answer and isinstance(answer['answerScore'], float)
     has_clause_content = 'clauseContent' in answer and isinstance(answer['clauseContent'], str)
+    has_code = 'code' in answer and isinstance(answer['code'], str)
     return is_dict and has_answer and has_similarity_score and has_answer_score and has_atomic_clause and \
-        has_clause_content
+        has_clause_content and has_code
 
 
 def test_default_qa(app: Flask, client: FlaskClient):
@@ -42,7 +43,7 @@ def test_all_answers(app: Flask, client: FlaskClient):
         assert isinstance(response.json, list)
         assert len(response.json) == 5
         assert all(is_answer_shape(item) for item in response.json)
-        assert is_desc_score(response.json)
+        assert is_desc_score(response.json, score_key='similarityScore')
 
 
 def test_all_answers_with_top_k(app: Flask, client: FlaskClient):
@@ -59,7 +60,7 @@ def test_all_answers_with_top_k(app: Flask, client: FlaskClient):
         assert isinstance(response.json, list)
         assert len(response.json) == 2
         assert all(is_answer_shape(item) for item in response.json)
-        assert is_desc_score(response.json)
+        assert is_desc_score(response.json, score_key='similarityScore')
 
 
 def test_top_k_below_min(app: Flask, client: FlaskClient):
