@@ -1,7 +1,19 @@
-import { Button, Center, Collapse, Paper, Text, Title } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
+import {
+  Box,
+  Button,
+  Group,
+  Paper,
+  Popover,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core';
 import { AnswerResultDTO } from '../api/question';
+
+function formatScore(score: number) {
+  // Convert decimal to percentage and round to 2 decimal places
+  return `${Math.round(score * 10000) / 100}%`;
+}
 
 interface AnswerCardProps {
   question: string;
@@ -9,38 +21,54 @@ interface AnswerCardProps {
 }
 
 export function AnswerCard({ question, answerDto }: AnswerCardProps) {
-  const [opened, { toggle }] = useDisclosure(false);
-
-  const rightIcon = opened ? (
-    <IconChevronUp size="1rem" />
-  ) : (
-    <IconChevronDown size="1rem" />
-  );
-
   return (
-    <Paper withBorder p="md" pb="xs">
-      <Title order={5} mb="md">
-        {question}
-      </Title>
-      <Text mb="xs">{answerDto.answer}</Text>
-      <Collapse in={opened}>
-        <Text>{answerDto.groupClause}</Text>
-        <Text>{answerDto.atomicClause}</Text>
-        <Text>{answerDto.clauseContent}</Text>
-        <Text>{answerDto.similarityScore}</Text>
-        <Text>{answerDto.answerScore}</Text>
-      </Collapse>
-      <Center>
-        <Button
-          onClick={toggle}
-          variant="subtle"
-          color="gray"
-          size="xs"
-          rightIcon={rightIcon}
-        >
-          {opened ? 'Hide Details' : 'Show Details'}
-        </Button>
-      </Center>
+    <Paper withBorder p="md" pb="sm">
+      <Stack spacing="xl">
+        <Box>
+          <Title order={5}>Question</Title>
+          <Text>{question}</Text>
+        </Box>
+        <Box>
+          <Title order={5}>Answer</Title>
+          <Text>{answerDto.answer}</Text>
+        </Box>
+        <Box>
+          <Text fw="bold">From Clause {answerDto.atomicClause}:</Text>
+          <Text>{answerDto.clauseContent}</Text>
+          <Group mt="xl">
+            <Text size="sm" color="dimmed">
+              Similarity: {formatScore(answerDto.similarityScore)}
+            </Text>
+            <Text size="sm" color="dimmed">
+              Confidence: {formatScore(answerDto.answerScore)}
+            </Text>
+            <Popover width={300} withArrow>
+              <Popover.Target>
+                <Button
+                  compact
+                  variant="subtle"
+                  color="gray"
+                  fw={400}
+                  td="underline"
+                  size="xs"
+                >
+                  What do these scores mean?
+                </Button>
+              </Popover.Target>
+              <Popover.Dropdown>
+                <Text size="sm">
+                  Similarity measures how similar the found clause is to the
+                  question asked.
+                </Text>
+                <Text size="sm" mt="xs">
+                  Confidence measures the probability that the extracted answer
+                  is correct given the found clause and the question asked.
+                </Text>
+              </Popover.Dropdown>
+            </Popover>
+          </Group>
+        </Box>
+      </Stack>
     </Paper>
   );
 }
