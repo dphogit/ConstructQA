@@ -8,6 +8,7 @@ export interface AnswerResultDTO {
   similarityScore: number;
   answerScore: number;
   clauseContent: string;
+  code: string;
 }
 
 function askQuestion(query: string): Promise<AnswerResultDTO[]> {

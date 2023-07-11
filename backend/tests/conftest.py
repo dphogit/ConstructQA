@@ -27,6 +27,15 @@ def load_vectors_and_payload():
         for rec in df.to_dict(orient='records')
     ]
 
+    # Create the corresponding payload for the vectors.
+    # TODO Replace above with this
+    payload_path = os.path.join(DATA_DIR, 'clauses_df.csv')
+    df = pd.read_csv(payload_path)
+    df = df.rename(
+        columns={'Atomic Clause': 'atomicClause', 'Code': 'code', 'Content': 'content', 'Group Clause': 'groupClause'}
+    )
+    payload = df.to_dict(orient='records')
+
     return vectors, payload
 
 

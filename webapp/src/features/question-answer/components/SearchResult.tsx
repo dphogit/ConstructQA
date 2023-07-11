@@ -34,6 +34,9 @@ export function SearchResult({ answerDto }: SearchResultProps) {
     <>
       <Box py="sm" px="xs" className={classes.root} onClick={open}>
         <Text fw="bold">{title}</Text>
+        <Text color="dimmed" size="sm" mb="xs">
+          {answerDto.code} - {answerDto.groupClause}
+        </Text>
         <Text size="sm" lineClamp={2}>
           {answerDto.clauseContent}
         </Text>

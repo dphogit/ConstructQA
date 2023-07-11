@@ -30,6 +30,9 @@ export function AnswerCard({ question, answerDto }: AnswerCardProps) {
         </Box>
         <Box>
           <Text fw="bold">From Clause {answerDto.atomicClause}:</Text>
+          <Text color="dimmed" size="sm" mb="xs">
+            {answerDto.code} - {answerDto.groupClause}
+          </Text>
           <Text>{answerDto.clauseContent}</Text>
           <Group mt="xl">
             <Text size="sm" color="dimmed">

@@ -35,6 +35,7 @@ class QuestionAnsweringService:
             - **similarityScore** (`float`) -- The similarity score between the query and the retrieved result.
             - **answerScore** (`float`) -- The probability of the correct answer extracted from the context.
             - **clauseContent** (`str`) -- The content of the clause that the answer was extracted from.
+            - **code** (`str`) -- The building code that the context/answer resides in.
         """
 
         def create_answer_item(search_result) -> Dict:
@@ -46,7 +47,8 @@ class QuestionAnsweringService:
                 'groupClause': search_result['payload']['groupClause'],
                 'similarityScore': search_result['score'],
                 'answerScore': ans_obj['score'],
-                'clauseContent': search_result['payload']['content']
+                'clauseContent': search_result['payload']['content'],
+                'code': search_result['payload']['code']
             }
 
         # Obtain the top k documents from the search service and answer all of them.
