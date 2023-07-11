@@ -1,11 +1,14 @@
+import { Box, Title } from '@mantine/core';
 import { QuestionAnswer } from '@/features/question-answer';
-import { AppLayout } from '@/components/AppLayout';
 
 function App() {
   return (
-    <AppLayout>
+    <Box pt={48}>
+      <Title order={1} ta="center">
+        👷‍♂️ ConstructQA
+      </Title>
       <QuestionAnswer />
-    </AppLayout>
+    </Box>
   );
 }
 

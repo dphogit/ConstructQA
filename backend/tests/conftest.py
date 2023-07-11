@@ -23,7 +23,10 @@ def load_vectors_and_payload():
     df = pd.read_json(payload_path)
     df['limitOnApplication'].fillna('', inplace=True)
     payload = [
-        {'clause': rec['clause'], 'content': f"{rec['content']} {rec['limitOnApplication']}"}
+        {'content': f"{rec['content']} {rec['limitOnApplication']}",
+         'code': f"Protection of Fire",
+         'groupClause': f"Fire affecting areas beyond the fire source",
+         'atomicClause': rec['clause']}
         for rec in df.to_dict(orient='records')
     ]
 

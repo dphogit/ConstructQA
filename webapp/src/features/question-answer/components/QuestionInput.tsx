@@ -1,70 +1,81 @@
 import React, { useState } from 'react';
-import { createStyles, Stack, Textarea } from '@mantine/core';
+import { Box, CloseButton, Group, TextInput } from '@mantine/core';
+import { ExampleQuestions } from './ExampleQuestions';
 import { SendQuestionButton } from './SendQuestionButton';
-import { useQAContext } from '../store/QuestionAnswerContext';
-import { useAskQuestionMutation } from '../api/question';
+import { Disclaimer } from './Disclaimer';
 
-const useStyles = createStyles({
-  wrapper: {
-    backgroundColor: 'white',
-    paddingTop: 8,
-    paddingBottom: 8,
-    paddingLeft: 16,
-    paddingRight: 16,
-    borderRadius: 16,
-    boxShadow: '0 0 24px rgba(0, 0, 0, 0.1)',
-  },
-});
+interface QuestionInputProps {
+  isDisabled?: boolean;
+  onSendQuestion?: (question: string) => void;
+}
 
-export function QuestionInput() {
-  const { classes } = useStyles();
+export function QuestionInput({
+  isDisabled,
+  onSendQuestion,
+}: QuestionInputProps) {
+  const [query, setQuery] = useState<string>('');
 
-  const { addMessage } = useQAContext();
+  function sendQuery(q: string) {
+    const validQuery = q.trim();
+    if (!validQuery || isDisabled) return;
 
-  const askQuestionMutation = useAskQuestionMutation();
-
-  const [textAreaValue, setTextAreaValue] = useState<string>('');
-
-  const isSendDisabled = textAreaValue.trim().length === 0;
-
-  function sendQuestion() {
-    const question = textAreaValue.trim();
-    setTextAreaValue('');
-    addMessage({ content: question, sender: 'user' });
-    askQuestionMutation.mutate(question, {
-      onSuccess: (answerData) => {
-        addMessage({ content: answerData.answer, sender: 'ai' });
-      },
-    });
+    onSendQuestion?.(validQuery);
   }
 
-  function sendIfEnterPressed(event: React.KeyboardEvent<HTMLTextAreaElement>) {
-    if (event.key === 'Enter' && !event.shiftKey && !isSendDisabled) {
-      event.preventDefault();
-      sendQuestion();
+  function sendIfEnterPressed(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === 'Enter') {
+      sendQuery(query);
     }
   }
 
-  return (
-    <Textarea
-      value={textAreaValue}
-      onChange={(event) => setTextAreaValue(event.currentTarget.value)}
-      onKeyDown={sendIfEnterPressed}
-      classNames={{ wrapper: classes.wrapper }}
-      variant="unstyled"
-      size="md"
-      autosize
-      placeholder="Ask ConstructQA a question"
-      aria-label="Textarea to ask ConstructQA a question"
-      rightSection={
-        <Stack h="100%" justify="flex-end" pb={12}>
-          <SendQuestionButton
-            disabled={isSendDisabled}
-            onClick={sendQuestion}
-          />
-        </Stack>
-      }
-      rightSectionWidth={64}
+  function handleExampleQuestionClick(question: string) {
+    if (question.trim() === query.trim()) return;
+
+    setQuery(question);
+    sendQuery(question);
+  }
+
+  const isEmptyQuery = !query.trim();
+
+  const sendQuestionBtn = (
+    <SendQuestionButton
+      disabled={isEmptyQuery || isDisabled}
+      onClick={() => sendQuery(query)}
     />
+  );
+
+  const rightSection = isEmptyQuery ? (
+    sendQuestionBtn
+  ) : (
+    <Group>
+      <CloseButton
+        size="md"
+        radius="xl"
+        iconSize={16}
+        onClick={() => setQuery('')}
+        aria-label="Clear Input"
+      />
+      {sendQuestionBtn}
+    </Group>
+  );
+
+  return (
+    <>
+      <ExampleQuestions onQuestionClick={handleExampleQuestionClick} />
+      <Disclaimer />
+      <Box pt={48}>
+        <TextInput
+          value={query}
+          onChange={(event) => setQuery(event.currentTarget.value)}
+          onKeyDown={sendIfEnterPressed}
+          aria-label="Question Input"
+          placeholder="Ask a question..."
+          size="lg"
+          disabled={isDisabled}
+          rightSectionWidth={!isEmptyQuery ? 100 : undefined}
+          rightSection={rightSection}
+        />
+      </Box>
+    </>
   );
 }

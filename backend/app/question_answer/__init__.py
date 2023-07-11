@@ -16,34 +16,45 @@ class QuestionAnsweringService:
         self.__search_service = search_service
         self.__answer_extraction_service = answer_extraction_service
 
-    def answer_query(self, query: str, top_k=DEFAULT_TOP_K, all_searched=False) -> Union[Dict, List[Dict]]:
+    def answer_query(self, query: str, top_k=DEFAULT_TOP_K, all_answers=False) -> Union[Dict, List[Dict]]:
         """Answers a provided query by first performing a search for similar documents and then using these documents
         to extract the answer from.
 
         Args:
             query: The query to answer.
             top_k: The number of documents to search for and extract answers from. Defaults to 5.
-            all_searched: Whether to return all the answers from the top k documents or just the top answer.
-                If `True`, returns the list of answer results in descending score order. Defaults to `False`.
+            all_answers: Whether to return all the answers from the top k documents or just the top answer.
+                If `True`, returns the list of answer results in descending similarity score order. Defaults to `False`.
 
         Returns:
             A `dict` or `list` of `dict`s which are the answer results. The `dict`s contain the following keys:
 
             - **answer** (`str`) -- The answer to the query.
-            - **score** (`float`) -- The probability associated with the answer.
+            - **atomicClause** (`str`) -- The unique clause of the document that the answer was extracted from.
+            - **groupClause** (`str`) -- The grouping clause of the document that the answer was extracted from.
+            - **similarityScore** (`float`) -- The similarity score between the query and the retrieved result.
+            - **answerScore** (`float`) -- The probability of the correct answer extracted from the context.
+            - **clauseContent** (`str`) -- The content of the clause that the answer was extracted from.
+            - **code** (`str`) -- The building code that the context/answer resides in.
         """
 
-        def extract_answer(context: str) -> Dict:
-            return self.__answer_extraction_service.extract_answer(query, context)
+        def create_answer_item(search_result) -> Dict:
+            """Helper function to create the specified answer Dict specified in the docstring."""
+            ans_obj = self.__answer_extraction_service.extract_answer(query, search_result['payload']['content'])
+            return {
+                'answer': ans_obj['answer'],
+                'atomicClause': search_result['payload']['atomicClause'],
+                'groupClause': search_result['payload']['groupClause'],
+                'similarityScore': search_result['score'],
+                'answerScore': ans_obj['score'],
+                'clauseContent': search_result['payload']['content'],
+                'code': search_result['payload']['code']
+            }
 
-        # Obtain the top k documents from the search service
+        # Obtain the top k documents from the search service and answer all of them.
         search_results = self.__search_service.search(query, top_k)
-
-        # Extract the answers from each search result and sort (in-place) by score descending
-        answers = [extract_answer(r['payload']['content']) for r in search_results]
-        answers.sort(key=lambda a: a['score'], reverse=True)
-
-        return answers if all_searched else answers[0]
+        answers = [create_answer_item(search_result) for search_result in search_results]
+        return answers if all_answers else answers[0]
 
     def search_similar_documents(self, query: str, top_k=DEFAULT_TOP_K) -> List[Dict]:
         return self.__search_service.search(query, top_k)
