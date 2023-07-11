@@ -48,7 +48,7 @@ def create_app(test_config=None) -> Flask:
         data = request.get_json()
         query = data.get('query')
         top_k = data.get('topK', DEFAULT_TOP_K)
-        all_searched = data.get('allSearched', False)
-        return qa_service.answer_query(query, top_k, all_searched)
+        all_answers = data.get('allAnswers', False)
+        return qa_service.answer_query(query, top_k, all_answers)
 
     return app

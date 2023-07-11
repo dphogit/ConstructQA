@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, CloseButton, Group, TextInput } from '@mantine/core';
 import { ExampleQuestions } from './ExampleQuestions';
 import { SendQuestionButton } from './SendQuestionButton';
+import { Disclaimer } from './Disclaimer';
 
 interface QuestionInputProps {
   isDisabled?: boolean;
@@ -61,6 +62,7 @@ export function QuestionInput({
   return (
     <>
       <ExampleQuestions onQuestionClick={handleExampleQuestionClick} />
+      <Disclaimer />
       <Box pt={48}>
         <TextInput
           value={query}

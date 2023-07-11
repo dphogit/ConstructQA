@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Box, Container, Loader, Stack, Text } from '@mantine/core';
-import { Disclaimer } from './Disclaimer';
+import { Box, Container, Loader, Stack, Text, Title } from '@mantine/core';
 import { QuestionInput } from './QuestionInput';
 import { AnswerCard } from './AnswerCard';
+import { SearchResult } from './SearchResult';
 import { useAskQuestionMutation } from '../api/question';
 
 export function QuestionAnswer() {
@@ -16,13 +16,10 @@ export function QuestionAnswer() {
   }
 
   return (
-    <Container pt={16}>
-      <Box mb={32}>
-        <QuestionInput onSendQuestion={sendQuestion} />
-        <Disclaimer />
-      </Box>
+    <Container pt="md" pb={48}>
+      <QuestionInput onSendQuestion={sendQuestion} />
       {askQuestionMutation.isLoading && (
-        <Stack align="center" spacing="xs">
+        <Stack align="center" spacing="xs" mt="xl">
           <Loader size="xl" />
           <Text ta="center" size="sm">
             Answering Your Question...
@@ -30,10 +27,25 @@ export function QuestionAnswer() {
         </Stack>
       )}
       {recentQuestion && askQuestionMutation.data && (
-        <AnswerCard
-          question={recentQuestion}
-          answerDto={askQuestionMutation.data}
-        />
+        <Box mt="xl">
+          <AnswerCard
+            question={recentQuestion}
+            answerDto={askQuestionMutation.data[0]}
+          />
+          <Box mt={64}>
+            <Title order={4} px="xs">
+              Other Similar Clauses
+            </Title>
+            <Box mt="xs">
+              {askQuestionMutation.data.slice(1).map((answerDto) => (
+                <SearchResult
+                  key={answerDto.atomicClause}
+                  answerDto={answerDto}
+                />
+              ))}
+            </Box>
+          </Box>
+        </Box>
       )}
     </Container>
   );

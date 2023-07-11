@@ -16,15 +16,15 @@ class QuestionAnsweringService:
         self.__search_service = search_service
         self.__answer_extraction_service = answer_extraction_service
 
-    def answer_query(self, query: str, top_k=DEFAULT_TOP_K, all_searched=False) -> Union[Dict, List[Dict]]:
+    def answer_query(self, query: str, top_k=DEFAULT_TOP_K, all_answers=False) -> Union[Dict, List[Dict]]:
         """Answers a provided query by first performing a search for similar documents and then using these documents
         to extract the answer from.
 
         Args:
             query: The query to answer.
             top_k: The number of documents to search for and extract answers from. Defaults to 5.
-            all_searched: Whether to return all the answers from the top k documents or just the top answer.
-                If `True`, returns the list of answer results in descending score order. Defaults to `False`.
+            all_answers: Whether to return all the answers from the top k documents or just the top answer.
+                If `True`, returns the list of answer results in descending similarity score order. Defaults to `False`.
 
         Returns:
             A `dict` or `list` of `dict`s which are the answer results. The `dict`s contain the following keys:
@@ -49,12 +49,10 @@ class QuestionAnsweringService:
                 'clauseContent': search_result['payload']['content']
             }
 
-        # Obtain the top k documents from the search service and answer all of them. These answers are then sorted by
-        # their probability score that the extracted answer is correct given the question context pair.
+        # Obtain the top k documents from the search service and answer all of them.
         search_results = self.__search_service.search(query, top_k)
         answers = [create_answer_item(search_result) for search_result in search_results]
-        answers.sort(key=lambda a: a['answerScore'], reverse=True)
-        return answers if all_searched else answers[0]
+        return answers if all_answers else answers[0]
 
     def search_similar_documents(self, query: str, top_k=DEFAULT_TOP_K) -> List[Dict]:
         return self.__search_service.search(query, top_k)

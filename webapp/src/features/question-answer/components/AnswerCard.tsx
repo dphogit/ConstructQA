@@ -9,11 +9,7 @@ import {
   Title,
 } from '@mantine/core';
 import { AnswerResultDTO } from '../api/question';
-
-function formatScore(score: number) {
-  // Convert decimal to percentage and round to 2 decimal places
-  return `${Math.round(score * 10000) / 100}%`;
-}
+import { formatScore } from '../utils';
 
 interface AnswerCardProps {
   question: string;
@@ -22,14 +18,14 @@ interface AnswerCardProps {
 
 export function AnswerCard({ question, answerDto }: AnswerCardProps) {
   return (
-    <Paper withBorder p="md" pb="sm">
+    <Paper withBorder p="md" pb="sm" radius="md">
       <Stack spacing="xl">
         <Box>
-          <Title order={5}>Question</Title>
+          <Title order={4}>Question</Title>
           <Text>{question}</Text>
         </Box>
         <Box>
-          <Title order={5}>Answer</Title>
+          <Title order={4}>Answer</Title>
           <Text>{answerDto.answer}</Text>
         </Box>
         <Box>

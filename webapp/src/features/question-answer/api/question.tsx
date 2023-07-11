@@ -10,8 +10,8 @@ export interface AnswerResultDTO {
   clauseContent: string;
 }
 
-function askQuestion(query: string): Promise<AnswerResultDTO> {
-  return axios.post('/query', { query });
+function askQuestion(query: string): Promise<AnswerResultDTO[]> {
+  return axios.post('/query', { query, allAnswers: true });
 }
 
 export function useAskQuestionMutation() {
