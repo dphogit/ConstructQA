@@ -16,12 +16,12 @@ if __name__ == "__main__":
     qdrant_client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
 
     # Load all the clauses from the numpy file
-    clauses_path = os.path.join(DATA_DIR, 'clause_vectors.npy')
+    clauses_path = os.path.join(DATA_DIR, 'clauses.npy')
     vectors = np.load(clauses_path)
     vector_dimension = vectors.shape[1]
 
     # Create the corresponding payload for the vectors.
-    payload_path = os.path.join(DATA_DIR, 'clauses_df.csv')
+    payload_path = os.path.join(DATA_DIR, 'clauses.csv')
     df = pd.read_csv(payload_path)
     df = df.rename(
         columns={'Atomic Clause': 'atomicClause', 'Code': 'code', 'Content': 'content', 'Group Clause': 'groupClause'}
