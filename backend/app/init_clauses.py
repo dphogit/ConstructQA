@@ -1,9 +1,6 @@
 """
 Script to populate the clause vector embeddings in the vector database.
 NOTE: This will delete and recreate the collection so any existing data will be lost.
-
-TODO This will obviously need to adapt when we have the full dataset.
-Currently, only the fire clauses are being used.
 """
 import os
 
