@@ -15,11 +15,11 @@ def load_vectors_and_payload():
     """Helper function to load the vectors and payload for testing."""
 
     # Load the fire clauses with numpy
-    fire_clauses_path = os.path.join(DATA_DIR, 'fire-clauses.npy')
+    fire_clauses_path = os.path.join(DATA_DIR, 'test-clauses.npy')
     vectors = np.load(fire_clauses_path)
 
     # Create the corresponding payload for the vectors.
-    payload_path = os.path.join(DATA_DIR, 'fire-clauses.json')
+    payload_path = os.path.join(DATA_DIR, 'test-clauses.json')
     df = pd.read_json(payload_path)
     df['limitOnApplication'].fillna('', inplace=True)
     payload = [

@@ -1,16 +1,18 @@
 # 👷‍♂️ ConstructQA
 
-Question Answering System for NZ Building Code Regulations - UoA Part IV Research Project
+UoA 2023 Part IV Project #110 - AI Approach to a Question/Answering System for a Construction Project 
+
+This is the codebase for a Question Answering application on the NZ Building codes.
 
 ## 🎨 Frontend 
 
-The frontend web application is built using:
-- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/docs/handbook/react.html) for app development
-- [Vite](https://vitejs.dev/) for the build tool
-- [Mantine](https://mantine.dev/) for the UI component library
-- [Tanstack React Query](https://tanstack.com/query/latest/docs/react/overview) and [Axios](https://axios-http.com/) for external data management
+The frontend web application is built using 
+[React](https://react.dev/) + 
+[TypeScript](https://www.typescriptlang.org/docs/handbook/react.html) + 
+[Vite](https://vitejs.dev/).
 
-The frontend follows the practices of the [Bulletproof-React Guide](https://github.com/alan2207/bulletproof-react/tree/master)
+The frontend follows the practices of the 
+[Bulletproof-React Guide](https://github.com/alan2207/bulletproof-react/tree/master)
 so please briefly familiarise with it regarding the project structure and best practices.
 
 ### Installation and Setup
@@ -83,20 +85,20 @@ python -m pip freeze > requirements.txt
 
 #### Vector Database - Qdrant
 
-Make sure to grab the relevant data files from the Google Drive folder and place them in the `backend/data` folder.
+In the [`backend/data`](./backend/data) folder there are a few files:
 
 All clauses (required to run the seed script):
-- `clause_vectors.npy`
-- `clauses_df.csv`
+- `clauses.csv`
+- `clauses.npy`
 
 For testing:
-- `fire-clauses.json`
-- `fire-clauses.npy` (this can also be produced by running all cells in the [`fire-clauses.ipynb`](./backend/notebooks/fire-clauses.ipynb) notebook)
+- `test-clauses.json`
+- `test-clauses.npy`
 
 This project uses [Qdrant](https://qdrant.tech/) for it vector database to store embeddings. 
 
-As per the Qdrant Quickstart guide, the easiest way to run Qdrant is using [Docker](https://docs.docker.com/get-docker/) so make
-sure you have that installed and setup.
+As per the Qdrant Quickstart guide, the easiest way to run Qdrant is using 
+[Docker](https://docs.docker.com/get-docker/) so make sure you have that installed and setup.
 
 To get Qdrant running on the command line:
 
@@ -168,13 +170,3 @@ python -m coverage html
 ```
 
 Then open the `htmlcov/index.html` file.
-
-### Jupyter Notebooks
-
-This project uses [Jupyter](https://jupyter.org/) to document scripts, experiments etc. when you want 
-step-by-step execution of code. It can be run with the help of your IDE (PyCharm, VSCode etc.) or on the browser.
-
-To run JupyterLab on the browser:
-```bash
-jupyter notebook
-```
