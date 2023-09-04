@@ -1,6 +1,5 @@
 import os
 
-# TODO These need to be updated to scale beyond one folder deep.
 CODE_DIR = os.path.dirname(__file__)        # The directory where the script that is being executed is located.
 ROOT_DIR = os.path.dirname(CODE_DIR)        # The directory where the backend directory is located.
 DATA_DIR = os.path.join(ROOT_DIR, 'data')   # The directory where the data directory is located.
