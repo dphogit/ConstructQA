@@ -41,7 +41,7 @@ export function SearchResult({ answerDto }: SearchResultProps) {
           {answerDto.clauseContent}
         </Text>
         <Text color="dimmed" size="sm" mt="sm">
-          Similarity: {formatScore(answerDto.similarityScore)}
+          Relevance: {formatScore(answerDto.similarityScore)}
         </Text>
       </Box>
       <Modal
@@ -52,7 +52,7 @@ export function SearchResult({ answerDto }: SearchResultProps) {
       >
         <Text size="sm">{answerDto.clauseContent}</Text>
         <Text color="dimmed" size="sm" mt="md">
-          Sentence Similarity: {formatScore(answerDto.similarityScore)}
+          Relevance: {formatScore(answerDto.similarityScore)}
         </Text>
       </Modal>
     </>

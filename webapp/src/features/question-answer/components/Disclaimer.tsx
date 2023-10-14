@@ -13,8 +13,9 @@ export function Disclaimer() {
         rel="norefferer"
       >
         NZ building compliance codes
-      </Anchor>
-      . Use at your own discretion.
+      </Anchor>{' '}
+      and their accompanying Acceptable Solutions and Verifciation Methods
+      documents. Use at your own discretion.
     </Text>
   );
 }
