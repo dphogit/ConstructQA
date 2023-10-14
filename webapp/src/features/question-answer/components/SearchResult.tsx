@@ -7,9 +7,10 @@ const useStyles = createStyles((theme) => ({
   root: {
     transition: 'all 100ms ease-out',
     cursor: 'pointer',
+    borderTop: `1px solid ${theme.colors.gray[3]}`,
     borderBottom: `1px solid ${theme.colors.gray[3]}`,
 
-    '&:first-child': {
+    '&:first-of-type': {
       borderTop: `1px solid ${theme.colors.gray[3]}`,
     },
 
@@ -41,7 +42,7 @@ export function SearchResult({ answerDto }: SearchResultProps) {
           {answerDto.clauseContent}
         </Text>
         <Text color="dimmed" size="sm" mt="sm">
-          Similarity: {formatScore(answerDto.similarityScore)}
+          Relevance: {formatScore(answerDto.similarityScore)}
         </Text>
       </Box>
       <Modal
@@ -52,7 +53,7 @@ export function SearchResult({ answerDto }: SearchResultProps) {
       >
         <Text size="sm">{answerDto.clauseContent}</Text>
         <Text color="dimmed" size="sm" mt="md">
-          Sentence Similarity: {formatScore(answerDto.similarityScore)}
+          Relevance: {formatScore(answerDto.similarityScore)}
         </Text>
       </Modal>
     </>

@@ -11,4 +11,4 @@ QDRANT_LOCATION = f'http://{QDRANT_HOST}:{QDRANT_PORT}'
 QDRANT_STORAGE_DIR = 'qdrant_storage'
 
 SENTENCE_MODEL = 'multi-qa-MiniLM-L6-cos-v1'
-QA_MODEL = 'deepset/tinyroberta-squad2'
+QA_MODEL = 'Dean0HuggingFace/tinyroberta-squad2-nz-building-codes'

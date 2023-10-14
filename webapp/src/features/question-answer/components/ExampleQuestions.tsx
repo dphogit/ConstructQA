@@ -21,7 +21,7 @@ interface ExampleQuestionsProps {
 const EXAMPLE_QUESTIONS: string[] = [
   'How high must the smoke be above the floor when firefighters put out a fire with water?',
   'How many escape routes should an occupied space in a building have?',
-  'Given a column is partly embedded in firm soil, what is the minimum depth of the end restraint?',
+  'What is the yearly probablility of surface water from an event that should not enter buildings?',
 ];
 
 export function ExampleQuestions({ onQuestionClick }: ExampleQuestionsProps) {
@@ -40,7 +40,7 @@ export function ExampleQuestions({ onQuestionClick }: ExampleQuestionsProps) {
       </Title>
       <Grid>
         {EXAMPLE_QUESTIONS.map((question, i) => (
-          <Grid.Col sm={4} xs={12}>
+          <Grid.Col sm={4} xs={12} key={question}>
             <Paper
               className={classes.paper}
               component="button"

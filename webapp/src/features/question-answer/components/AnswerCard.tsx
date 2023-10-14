@@ -10,6 +10,7 @@ import {
 } from '@mantine/core';
 import { AnswerResultDTO } from '../api/question';
 import { formatScore } from '../utils';
+import Highlighter from 'react-highlight-words';
 
 interface AnswerCardProps {
   question: string;
@@ -17,6 +18,9 @@ interface AnswerCardProps {
 }
 
 export function AnswerCard({ question, answerDto }: AnswerCardProps) {
+  // Surround with space so we can better ensure correct span is highlighted.
+  const highlightedAnswer = ` ${answerDto.answer} `;
+
   return (
     <Paper withBorder p="md" pb="sm" radius="md">
       <Stack spacing="xl">
@@ -29,14 +33,17 @@ export function AnswerCard({ question, answerDto }: AnswerCardProps) {
           <Text>{answerDto.answer}</Text>
         </Box>
         <Box>
-          <Text fw="bold">From Clause {answerDto.atomicClause}:</Text>
+          <Text fw="bold">From {answerDto.atomicClause}:</Text>
           <Text color="dimmed" size="sm" mb="xs">
             {answerDto.code} - {answerDto.groupClause}
           </Text>
-          <Text>{answerDto.clauseContent}</Text>
+          <Highlighter
+            textToHighlight={answerDto.clauseContent}
+            searchWords={[highlightedAnswer]}
+          />
           <Group mt="xl">
             <Text size="sm" color="dimmed">
-              Similarity: {formatScore(answerDto.similarityScore)}
+              Relevance: {formatScore(answerDto.similarityScore)}
             </Text>
             <Text size="sm" color="dimmed">
               Confidence: {formatScore(answerDto.answerScore)}
@@ -56,13 +63,13 @@ export function AnswerCard({ question, answerDto }: AnswerCardProps) {
               </Popover.Target>
               <Popover.Dropdown>
                 <Text size="sm">
-                  <strong>Similarity</strong> measures how similar the found
-                  clause is to the question asked.
+                  <strong>Relevance</strong> measures how similar the retrieved
+                  paragraph is to the question asked (similarity score).
                 </Text>
                 <Text size="sm" mt="xs">
                   <strong>Confidence</strong> measures the probability that the
-                  extracted answer is correct given the found clause and the
-                  question asked.
+                  extracted answer is correct given the retrieved paragraph and
+                  the question asked.
                 </Text>
               </Popover.Dropdown>
             </Popover>
