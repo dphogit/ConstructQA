@@ -30,7 +30,7 @@ export function AnswerCard({ question, answerDto }: AnswerCardProps) {
         </Box>
         <Box>
           <Title order={4}>Answer</Title>
-          <Text color="gray">{answerDto.answer}</Text>
+          <Text>{answerDto.answer}</Text>
         </Box>
         <Box>
           <Text fw="bold">From {answerDto.atomicClause}:</Text>
