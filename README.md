@@ -19,6 +19,7 @@ The frontend web application is built using
 [Vite](https://vitejs.dev/).
 
 The frontend follows the practices of the
+
 [Bulletproof-React Guide](https://github.com/alan2207/bulletproof-react/tree/master)
 so please briefly familiarise with it regarding the project structure and best practices.
 
@@ -105,6 +106,7 @@ For testing:
 
 - `test-clauses.json`
 - `test-clauses.npy`
+
 
 This project uses [Qdrant](https://qdrant.tech/) for it vector database to store embeddings.
 
