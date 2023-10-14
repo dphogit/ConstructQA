@@ -41,7 +41,6 @@ export function AnswerCard({ question, answerDto }: AnswerCardProps) {
             textToHighlight={answerDto.clauseContent}
             searchWords={[highlightedAnswer]}
           />
-          <Text>{answerDto.clauseContent}</Text>
           <Group mt="xl">
             <Text size="sm" color="dimmed">
               Relevance: {formatScore(answerDto.similarityScore)}

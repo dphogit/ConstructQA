@@ -7,9 +7,10 @@ const useStyles = createStyles((theme) => ({
   root: {
     transition: 'all 100ms ease-out',
     cursor: 'pointer',
+    borderTop: `1px solid ${theme.colors.gray[3]}`,
     borderBottom: `1px solid ${theme.colors.gray[3]}`,
 
-    '&:first-child': {
+    '&:first-of-type': {
       borderTop: `1px solid ${theme.colors.gray[3]}`,
     },
 

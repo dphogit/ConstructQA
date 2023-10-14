@@ -40,7 +40,7 @@ export function ExampleQuestions({ onQuestionClick }: ExampleQuestionsProps) {
       </Title>
       <Grid>
         {EXAMPLE_QUESTIONS.map((question, i) => (
-          <Grid.Col sm={4} xs={12}>
+          <Grid.Col sm={4} xs={12} key={question}>
             <Paper
               className={classes.paper}
               component="button"
