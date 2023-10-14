@@ -10,6 +10,7 @@ import {
 } from '@mantine/core';
 import { AnswerResultDTO } from '../api/question';
 import { formatScore } from '../utils';
+import Highlighter from 'react-highlight-words';
 
 interface AnswerCardProps {
   question: string;
@@ -17,6 +18,9 @@ interface AnswerCardProps {
 }
 
 export function AnswerCard({ question, answerDto }: AnswerCardProps) {
+  // Surround with space so we can better ensure correct span is highlighted.
+  const highlightedAnswer = ` ${answerDto.answer} `;
+
   return (
     <Paper withBorder p="md" pb="sm" radius="md">
       <Stack spacing="xl">
@@ -26,13 +30,17 @@ export function AnswerCard({ question, answerDto }: AnswerCardProps) {
         </Box>
         <Box>
           <Title order={4}>Answer</Title>
-          <Text>{answerDto.answer}</Text>
+          <Text color="gray">{answerDto.answer}</Text>
         </Box>
         <Box>
           <Text fw="bold">From {answerDto.atomicClause}:</Text>
           <Text color="dimmed" size="sm" mb="xs">
             {answerDto.code} - {answerDto.groupClause}
           </Text>
+          <Highlighter
+            textToHighlight={answerDto.clauseContent}
+            searchWords={[highlightedAnswer]}
+          />
           <Text>{answerDto.clauseContent}</Text>
           <Group mt="xl">
             <Text size="sm" color="dimmed">
